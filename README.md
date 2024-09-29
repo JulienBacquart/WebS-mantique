@@ -19,3 +19,15 @@
 ## Slides
 
 [WebSemantique - Presentation](https://docs.google.com/presentation/d/1KLYlVwpXp00OIlhzkgwN0bMuaWH4ockdj4gNZlJnpXo/edit?usp=sharing)
+
+## Sémantisation des données
+
+Cloner le repository :
+
+`git clone https://github.com/JulienBacquart/WebSemantique.git`
+
+`cd WebSemantique`
+
+Executer la commande suivante :
+
+`tarql-1.2/bin/tarql transform.sparql > output.ttl`
