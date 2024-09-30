@@ -3,20 +3,35 @@
 #   WHERE {}
 
 PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <https://dbpedia.org/property/>
 PREFIX ex: <http://example.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
 CONSTRUCT {
-    ?uri    foaf:isPrimaryTopicOf   ?medalist_link;
-            rdf:type                foaf:Person;
-            foaf:name               ?medalist_name;
-            ex:medal                ?medal.
+    ?athlete_id foaf:isPrimaryTopicOf   ?medalist_link;
+                rdf:type                foaf:Person;
+                foaf:name               ?medalist_name;
+                dbo:birthDate           ?date_of_birth_typed;
+                foaf:gender             ?sex_or_gender;
+                dbp:hometown            ?place_of_birth_id.
+
+    ?place_of_birth_id      dbo:name    ?place_of_birth;
+                            ex:lat       ?lat_typed;
+                            ex:lon      ?lon_typed;
+
+
 }
 FROM <file:./dataset/2024_medalists_nuts_only.csv#encoding=utf-8;header=present;delimiter=comma>
 WHERE {
-    BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?medalist_wikidata_id)) AS ?uri)
+    BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?medalist_wikidata_id)) AS ?athlete_id).
+    BIND (xsd:date(?date_of_birth) AS ?date_of_birth_typed).
+    BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?place_of_birth_wikidata_id)) AS ?place_of_birth_id).
+    
+    # Latitude and longitude
+    BIND (xsd:float(?lat) AS ?lat_typed).
+    BIND (xsd:float(?lon) AS ?lon_typed).
 }
 
 # medalist_link	https://en.wikipedia.org/wiki/Nicolas_Gestin
