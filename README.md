@@ -30,4 +30,4 @@ Cloner le repository :
 
 Executer la commande suivante :
 
-`tarql-1.2/bin/tarql transform.sparql > output.ttl`
+`tarql-1.2/bin/tarql --dedup 100000 transform.sparql > output.ttl`
