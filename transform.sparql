@@ -17,7 +17,8 @@ CONSTRUCT {
                 foaf:gender         ?sex_or_gender;
                 dbo:birthPlace      ?place_of_birth_id;
                 ex:delegation       ?delegation_id;
-                ex:won_medal        ?medal_id.
+                ex:won_medal        ?medal_id;
+                ex:sport            ?sport.
 
     ?place_of_birth_id a schema:Place;
                     foaf:name        ?place_of_birth;
@@ -52,14 +53,14 @@ CONSTRUCT {
     ?event_id a schema:Event; # Find a prefix specialy for sport event ?
             rdfs:seeAlso    ?event_link;
             foaf:name       ?event_name;
-            ex:sport        ?sport_id;
-            ex:part_of      ?meta_event_id.
+            # ex:sport        ?sport_id;
+            # ex:part_of      ?meta_event_id.
 
-    ?meta_event_id a schema:Event;
-            foaf:name       ?event_part_of.
+    # ?meta_event_id a schema:Event;
+    #         foaf:name       ?event_part_of.
 
-    ?sport_id a dbo:Sport; # Remove and include directly into event ?
-            foaf:name       ?sport.
+    # ?sport_id a dbo:Sport; # Remove and include directly into event ?
+    #         foaf:name       ?sport.
 }
 FROM <file:./dataset/2024_medalists_nuts_only.csv#encoding=utf-8;header=present;delimiter=comma>
 WHERE {
@@ -97,8 +98,8 @@ WHERE {
     # Meta-Event (?!)
     BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?event_part_of_wikidata_id)) AS ?meta_event_id).
 
-    # Sport
-    BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?sport_wikidata_id)) AS ?sport_id).    
+    # # Sport
+    # BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?sport_wikidata_id)) AS ?sport_id).    
 }
 
 # SELECT (COUNT(*) AS ?count)
