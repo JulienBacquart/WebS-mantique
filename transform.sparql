@@ -11,56 +11,56 @@ PREFIX schema: <https://schema.org/>
 
 CONSTRUCT {
     ?medalist_id a foaf:Person;
-                rdfs:seeAlso       ?medalist_link;        
+                rdfs:seeAlso        ?medalist_link;        
                 foaf:name           ?medalist_name;
                 dbo:birthDate       ?date_of_birth_typed;
                 foaf:gender         ?sex_or_gender;
                 dbo:birthPlace      ?place_of_birth_id;
                 ex:delegation       ?delegation_id;
-                ex:won_medal        ?medal_id;
-                ex:sport            ?sport.
-
-    ?place_of_birth_id a schema:Place;
-                    foaf:name        ?place_of_birth;
-                    geo:lat          ?lat_typed;
-                    geo:long          ?lon_typed;
-                    ex:nut0_id      ?nuts0_id_uri;
-                    ex:nut0_name    ?nuts0_name;
-                    ex:nut1_id      ?nuts1_id_uri;
-                    ex:nut1_name    ?nuts1_name;
-                    ex:nut2_id      ?nuts2_id_uri;
-                    ex:nut2_name    ?nuts2_name;
-                    ex:nut2_population  ?nuts2_population_typed;
-                    ex:nut2_gdp     ?nuts2_gdp_typed; # Will be missing if NA
-                    ex:nut3_id      ?nuts3_id_uri;
-                    ex:nut3_name    ?nuts3_name;
-                    ex:nut3_population  ?nuts3_population_typed;
-                    ex:nut3_gdp     ?nuts3_gdp_typed. # Will be missing if NA
+                # ex:won_medal        ?medal_id;  # See later in the file
+                dbo:sport           ?sport;
+                dbo:country         ?country_id.
 
     ?delegation_id a ex:delegation;
                     rdfs:seeAlso    ?delegation_link;
-                    foaf:name       ?delegation_name.
+                    schema:name     ?delegation_name.
 
-    ?country_medal_id a dbo:country; # Country is associted with a medalist, a delegation or a place_of_birth ?
-                    foaf:name       ?country_medal;
-                    dbpage:ISO_3166-1_alpha-2   ?country_medal_code2;
+    ?country_id a dbo:country;
+                    schema:name       ?country_medal;
+                    dbpage:ISO_3166-1_alpha-2   ?country_medal_code2; # keep only one and use dbo:iso31661Code ?
                     dbpage:ISO_3166-1_alpha-3   ?country_medal_code3.
-            
+    
+    # Need to be physically separated from where the rest of medalist is definied, otherwise TARQL group the medal together
+    # and drop them when using the --dedup option (?!)
+    ?medalist_id    ex:won_medal   ?medal_id.
+
     ?medal_id a ex:medal;
             ex:medal_type   ?medal;
             ex:won_at       ?event_id.
 
     ?event_id a schema:Event; # Find a prefix specialy for sport event ?
             rdfs:seeAlso    ?event_link;
-            foaf:name       ?event_name;
-            # ex:sport        ?sport_id;
-            # ex:part_of      ?meta_event_id.
+            schema:name     ?event_name.
 
-    # ?meta_event_id a schema:Event;
-    #         foaf:name       ?event_part_of.
+    ?place_of_birth_id a schema:Place;
+        schema:name     ?place_of_birth;
+        geo:lat         ?lat_typed;
+        geo:long        ?lon_typed;
+        ex:nut0_id      ?nuts0_id_uri;
+        ex:nut0_name    ?nuts0_name;
+        ex:nut1_id      ?nuts1_id_uri;
+        ex:nut1_name    ?nuts1_name;
+        ex:nut2_id      ?nuts2_id_uri;
+        ex:nut2_name    ?nuts2_name;
+        ex:nut2_population  ?nuts2_population_typed;
+        ex:nut2_gdp     ?nuts2_gdp_typed; # Will be missing if NA
+        ex:nut3_id      ?nuts3_id_uri;
+        ex:nut3_name    ?nuts3_name;
+        ex:nut3_population  ?nuts3_population_typed;
+        ex:nut3_gdp     ?nuts3_gdp_typed. # Will be missing if NA
 
     # ?sport_id a dbo:Sport; # Remove and include directly into event ?
-    #         foaf:name       ?sport.
+    #         schema:name       ?sport.
 }
 FROM <file:./dataset/2024_medalists_nuts_only.csv#encoding=utf-8;header=present;delimiter=comma>
 WHERE {
@@ -87,7 +87,7 @@ WHERE {
      BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?delegation_wikidata_id)) AS ?delegation_id).
 
     # Country
-    BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?country_medal_wikidata_id)) AS ?country_medal_id).
+    BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?country_medal_wikidata_id)) AS ?country_id).
 
     # Medal
     BIND (URI(CONCAT('medal_', STR(?ROWNUM))) AS ?medal_id).
@@ -95,8 +95,8 @@ WHERE {
     # Event
     BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?event_wikidata_id)) AS ?event_id).
 
-    # Meta-Event (?!)
-    BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?event_part_of_wikidata_id)) AS ?meta_event_id).
+    # # Meta-Event (?!)
+    # BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?event_part_of_wikidata_id)) AS ?meta_event_id).
 
     # # Sport
     # BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?sport_wikidata_id)) AS ?sport_id).    
