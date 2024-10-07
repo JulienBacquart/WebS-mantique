@@ -1,7 +1,6 @@
-@prefix schema:  <https://schema.org/> .
-@prefix geo:  <http://www.w3.org/2003/01/geo/wgs84_pos> .
 @prefix dbo:  <http://dbpedia.org/ontology/> .
-@prefix dbp:  <https://dbpedia.org/property/> .
+@prefix geo:  <http://www.w3.org/2003/01/geo/wgs84_pos> .
+@prefix schema:  <https://schema.org/> .
 @prefix dbpage:  <https://dbpedia.org/page/> .
 @prefix ex:  <http://example.org/> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -3842,6 +3841,9 @@
         ex:medal_type  "silver" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q116842353> .
 
+<https://www.wikidata.org/wiki/Q116842353>
+        schema:name  "basketball at the 2024 Summer Olympics ��� women's tournament" .
+
 <https://www.wikidata.org/wiki/Q274237>
         rdf:type            schema:Place ;
         schema:name         "Ris-Orangis" ;
@@ -4855,7 +4857,7 @@
         ex:nut1_id          <http://data.europa.eu/nuts/code/TR7> ;
         ex:nut1_name        "Orta Anadolu" ;
         ex:nut2_id          <http://data.europa.eu/nuts/code/TR71> ;
-        ex:nut2_name        "Kırıkkale, Aksaray, Niğde, Nevşehir, Kırşehir" ;
+        ex:nut2_name        "Kırıkkale, Aksaray, Niğde, Nevşehir, Kır��ehir" ;
         ex:nut2_population  "1630050"^^xsd:int ;
         ex:nut2_gdp         "12277.91"^^xsd:float ;
         ex:nut3_id          <http://data.europa.eu/nuts/code/TR714> ;
@@ -9498,7 +9500,7 @@
         ex:nut2_population  "1105932"^^xsd:int ;
         ex:nut2_gdp         "19203.2"^^xsd:float ;
         ex:nut3_id          <http://data.europa.eu/nuts/code/CZ042> ;
-        ex:nut3_name        "Ústecký kraj" ;
+        ex:nut3_name        "��stecký kraj" ;
         ex:nut3_population  "812337"^^xsd:int ;
         ex:nut3_gdp         "14684.15"^^xsd:float .
 
@@ -12516,21 +12518,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q242497> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114244785> ;
         dbo:sport       "association football" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q142> .
-
-<https://www.wikidata.org/wiki/Q114244785>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/France_at_the_2024_Summer_Olympics" ;
-        schema:name   "France at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q142>
-        rdf:type                   dbo:country ;
-        schema:name                "France" ;
-        dbpage:ISO_3166-1_alpha-2  "FR" ;
-        dbpage:ISO_3166-1_alpha-3  "FRA" .
-
-<https://www.wikidata.org/wiki/Q108910786>
-        ex:won_medal  <medal_421> .
+        dbo:country     <https://www.wikidata.org/wiki/Q142> ;
+        ex:won_medal    <medal_421> .
 
 <medal_421>  rdf:type  ex:medal ;
         ex:medal_type  "silver" ;
@@ -13372,24 +13361,6 @@
         ex:medal_type  "bronze" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q77316266> .
 
-<https://www.wikidata.org/wiki/Q2807>
-        rdf:type            schema:Place ;
-        schema:name         "Madrid" ;
-        geo:lat             "40.4169444444444"^^xsd:float ;
-        geo:long            "-3.70333333333333"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/ES> ;
-        ex:nut0_name        "Spain" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/ES3> ;
-        ex:nut1_name        "Comunidad de Madrid" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/ES30> ;
-        ex:nut2_name        "Comunidad de Madrid" ;
-        ex:nut2_population  "6871903"^^xsd:int ;
-        ex:nut2_gdp         "261713.1"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/ES300> ;
-        ex:nut3_name        "Madrid" ;
-        ex:nut3_population  "6871903"^^xsd:int ;
-        ex:nut3_gdp         "237540.31"^^xsd:float .
-
 <https://www.wikidata.org/wiki/Q106860268>
         rdf:type        foaf:Person ;
         rdfs:seeAlso    "https://en.wikipedia.org/wiki/Yassine_Kechta" ;
@@ -13465,21 +13436,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q2805> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114132359> ;
         dbo:sport       "association football" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q183> .
-
-<https://www.wikidata.org/wiki/Q114132359>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Germany_at_the_2024_Summer_Olympics" ;
-        schema:name   "Germany at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q183>
-        rdf:type                   dbo:country ;
-        schema:name                "Germany" ;
-        dbpage:ISO_3166-1_alpha-2  "DE" ;
-        dbpage:ISO_3166-1_alpha-3  "DEU" .
-
-<https://www.wikidata.org/wiki/Q27500890>
-        ex:won_medal  <medal_453> .
+        dbo:country     <https://www.wikidata.org/wiki/Q183> ;
+        ex:won_medal    <medal_453> .
 
 <medal_453>  rdf:type  ex:medal ;
         ex:medal_type  "bronze" ;
@@ -14181,21 +14139,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q172438> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q42911977> ;
         dbo:sport       "artistic gymnastics" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q145> .
-
-<https://www.wikidata.org/wiki/Q42911977>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Great_Britain_at_the_2024_Summer_Olympics" ;
-        schema:name   "Great Britain at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q145>
-        rdf:type                   dbo:country ;
-        schema:name                "United Kingdom" ;
-        dbpage:ISO_3166-1_alpha-2  "GB" ;
-        dbpage:ISO_3166-1_alpha-3  "GBR" .
-
-<https://www.wikidata.org/wiki/Q113356718>
-        ex:won_medal  <medal_475> .
+        dbo:country     <https://www.wikidata.org/wiki/Q145> ;
+        ex:won_medal    <medal_475> .
 
 <medal_475>  rdf:type  ex:medal ;
         ex:medal_type  "bronze" ;
@@ -14263,21 +14208,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q1524> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114753539> ;
         dbo:sport       "artistic gymnastics" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q41> .
-
-<https://www.wikidata.org/wiki/Q114753539>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Greece_at_the_2024_Summer_Olympics" ;
-        schema:name   "Greece at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q41>
-        rdf:type                   dbo:country ;
-        schema:name                "Greece" ;
-        dbpage:ISO_3166-1_alpha-2  "GR" ;
-        dbpage:ISO_3166-1_alpha-3  "GRC" .
-
-<https://www.wikidata.org/wiki/Q19421900>
-        ex:won_medal  <medal_477> .
+        dbo:country     <https://www.wikidata.org/wiki/Q41> ;
+        ex:won_medal    <medal_477> .
 
 <medal_477>  rdf:type  ex:medal ;
         ex:medal_type  "bronze" ;
@@ -14336,21 +14268,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q157055> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114666626> ;
         dbo:sport       "artistic gymnastics" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q212> .
-
-<https://www.wikidata.org/wiki/Q114666626>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Ukraine_at_the_2024_Summer_Olympics" ;
-        schema:name   "Ukraine at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q212>
-        rdf:type                   dbo:country ;
-        schema:name                "Ukraine" ;
-        dbpage:ISO_3166-1_alpha-2  "UA" ;
-        dbpage:ISO_3166-1_alpha-3  "UKR" .
-
-<https://www.wikidata.org/wiki/Q85993428>
-        ex:won_medal  <medal_479> .
+        dbo:country     <https://www.wikidata.org/wiki/Q212> ;
+        ex:won_medal    <medal_479> .
 
 <medal_479>  rdf:type  ex:medal ;
         ex:medal_type  "silver" ;
@@ -14384,21 +14303,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q6221> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114244642> ;
         dbo:sport       "artistic gymnastics" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q38> .
-
-<https://www.wikidata.org/wiki/Q114244642>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Italy_at_the_2024_Summer_Olympics" ;
-        schema:name   "Italy at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q38>
-        rdf:type                   dbo:country ;
-        schema:name                "Italy" ;
-        dbpage:ISO_3166-1_alpha-2  "IT" ;
-        dbpage:ISO_3166-1_alpha-3  "ITA" .
-
-<https://www.wikidata.org/wiki/Q106964369>
-        ex:won_medal  <medal_480> .
+        dbo:country     <https://www.wikidata.org/wiki/Q38> ;
+        ex:won_medal    <medal_480> .
 
 <medal_480>  rdf:type  ex:medal ;
         ex:medal_type  "silver" ;
@@ -14928,21 +14834,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q303111> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q42911725> ;
         dbo:sport       "handball" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q35> .
-
-<https://www.wikidata.org/wiki/Q42911725>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Denmark_at_the_2024_Summer_Olympics" ;
-        schema:name   "Denmark at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q35>
-        rdf:type                   dbo:country ;
-        schema:name                "Denmark" ;
-        dbpage:ISO_3166-1_alpha-2  "DK" ;
-        dbpage:ISO_3166-1_alpha-3  "DNK" .
-
-<https://www.wikidata.org/wiki/Q19968681>
-        ex:won_medal  <medal_496> .
+        dbo:country     <https://www.wikidata.org/wiki/Q35> ;
+        ex:won_medal    <medal_496> .
 
 <medal_496>  rdf:type  ex:medal ;
         ex:medal_type  "gold" ;
@@ -15815,21 +15708,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q5836> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q42911743> ;
         dbo:sport       "handball" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q29> .
-
-<https://www.wikidata.org/wiki/Q42911743>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Spain_at_the_2024_Summer_Olympics" ;
-        schema:name   "Spain at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q29>
-        rdf:type                   dbo:country ;
-        schema:name                "Spain" ;
-        dbpage:ISO_3166-1_alpha-2  "ES" ;
-        dbpage:ISO_3166-1_alpha-3  "ESP" .
-
-<https://www.wikidata.org/wiki/Q5883204>
-        ex:won_medal  <medal_525> .
+        dbo:country     <https://www.wikidata.org/wiki/Q29> ;
+        ex:won_medal    <medal_525> .
 
 <medal_525>  rdf:type  ex:medal ;
         ex:medal_type  "bronze" ;
@@ -15884,24 +15764,6 @@
 <medal_527>  rdf:type  ex:medal ;
         ex:medal_type  "bronze" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q121704904> .
-
-<https://www.wikidata.org/wiki/Q1492>
-        rdf:type            schema:Place ;
-        schema:name         "Barcelona" ;
-        geo:lat             "41.3825"^^xsd:float ;
-        geo:long            "2.1769444444444"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/ES> ;
-        ex:nut0_name        "Spain" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/ES5> ;
-        ex:nut1_name        "Este" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/ES51> ;
-        ex:nut2_name        "Cataluña" ;
-        ex:nut2_population  "7901963"^^xsd:int ;
-        ex:nut2_gdp         "255153.86"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/ES511> ;
-        ex:nut3_name        "Barcelona" ;
-        ex:nut3_population  "5797356"^^xsd:int ;
-        ex:nut3_gdp         "173721.88"^^xsd:float .
 
 <https://www.wikidata.org/wiki/Q42573040>
         rdf:type        foaf:Person ;
@@ -16130,21 +15992,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q1020025> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114244710> ;
         dbo:sport       "handball" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q20> .
-
-<https://www.wikidata.org/wiki/Q114244710>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Norway_at_the_2024_Summer_Olympics" ;
-        schema:name   "Norway at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q20>
-        rdf:type                   dbo:country ;
-        schema:name                "Norway" ;
-        dbpage:ISO_3166-1_alpha-2  "NO" ;
-        dbpage:ISO_3166-1_alpha-3  "NOR" .
-
-<https://www.wikidata.org/wiki/Q15300545>
-        ex:won_medal  <medal_536> .
+        dbo:country     <https://www.wikidata.org/wiki/Q20> ;
+        ex:won_medal    <medal_536> .
 
 <medal_536>  rdf:type  ex:medal ;
         ex:medal_type  "gold" ;
@@ -16256,24 +16105,6 @@
 <medal_539>  rdf:type  ex:medal ;
         ex:medal_type  "gold" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q121705755> .
-
-<https://www.wikidata.org/wiki/Q585>
-        rdf:type            schema:Place ;
-        schema:name         "Oslo" ;
-        geo:lat             "59.9133333333333"^^xsd:float ;
-        geo:long            "10.7388888888889"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/NO> ;
-        ex:nut0_name        "Norway" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/NO0> ;
-        ex:nut1_name        "Norge" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/NO08> ;
-        ex:nut2_name        "Oslo og Viken" ;
-        ex:nut2_population  "2001278"^^xsd:int ;
-        ex:nut2_gdp         "132715.89"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/NO081> ;
-        ex:nut3_name        "Oslo" ;
-        ex:nut3_population  "709037"^^xsd:int ;
-        ex:nut3_gdp         "70969.76"^^xsd:float .
 
 <https://www.wikidata.org/wiki/Q460909>
         rdf:type        foaf:Person ;
@@ -16584,24 +16415,6 @@
 <medal_551>  rdf:type  ex:medal ;
         ex:medal_type  "silver" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q121705755> .
-
-<https://www.wikidata.org/wiki/Q37776>
-        rdf:type            schema:Place ;
-        schema:name         "Besançon" ;
-        geo:lat             "47.242222222222"^^xsd:float ;
-        geo:long            "6.0213888888889"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/FR> ;
-        ex:nut0_name        "France" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/FRC> ;
-        ex:nut1_name        "Bourgogne-Franche-Comté" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/FRC2> ;
-        ex:nut2_name        "Franche-Comté" ;
-        ex:nut2_population  "1179388"^^xsd:int ;
-        ex:nut2_gdp         "34772.3"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/FRC21> ;
-        ex:nut3_name        "Doubs" ;
-        ex:nut3_population  "550624"^^xsd:int ;
-        ex:nut3_gdp         "15969.74"^^xsd:float .
 
 <https://www.wikidata.org/wiki/Q30118631>
         rdf:type        foaf:Person ;
@@ -17593,24 +17406,6 @@
         rdfs:seeAlso  "https://en.wikipedia.org/wiki/Judo_at_the_2024_Summer_Olympics_%E2%80%93_Men%27s_73_kg" ;
         schema:name   "judo at the 2024 Summer Olympics – men's 73 kg" .
 
-<https://www.wikidata.org/wiki/Q206493>
-        rdf:type            schema:Place ;
-        schema:name         "Sèvres" ;
-        geo:lat             "48.823055555556"^^xsd:float ;
-        geo:long            "2.2108333333333"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/FR> ;
-        ex:nut0_name        "France" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/FR1> ;
-        ex:nut1_name        "Ile-de-France" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/FR10> ;
-        ex:nut2_name        "Ile-de-France" ;
-        ex:nut2_population  "12388388"^^xsd:int ;
-        ex:nut2_gdp         "782639.16"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/FR105> ;
-        ex:nut3_name        "Hauts-de-Seine " ;
-        ex:nut3_population  "1646445"^^xsd:int ;
-        ex:nut3_gdp         "184778.7"^^xsd:float .
-
 <https://www.wikidata.org/wiki/Q118385038>
         rdf:type        foaf:Person ;
         rdfs:seeAlso    "https://en.wikipedia.org/wiki/Maxime-Ga%C3%ABl_Ngayap_Hambou" ;
@@ -18138,21 +17933,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q3992> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114401502> ;
         dbo:sport       "judo" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q31> .
-
-<https://www.wikidata.org/wiki/Q114401502>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Belgium_at_the_2024_Summer_Olympics" ;
-        schema:name   "Belgium at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q31>
-        rdf:type                   dbo:country ;
-        schema:name                "Belgium" ;
-        dbpage:ISO_3166-1_alpha-2  "BE" ;
-        dbpage:ISO_3166-1_alpha-3  "BEL" .
-
-<https://www.wikidata.org/wiki/Q106728257>
-        ex:won_medal  <medal_598> .
+        dbo:country     <https://www.wikidata.org/wiki/Q31> ;
+        ex:won_medal    <medal_598> .
 
 <medal_598>  rdf:type  ex:medal ;
         ex:medal_type  "bronze" ;
@@ -18178,24 +17960,6 @@
         rdf:type      schema:Event ;
         rdfs:seeAlso  "https://en.wikipedia.org/wiki/Judo_at_the_2024_Summer_Olympics_%E2%80%93_Women%27s_78_kg" ;
         schema:name   "judo at the 2024 Summer Olympics – women's 78 kg" .
-
-<https://www.wikidata.org/wiki/Q6221>
-        rdf:type            schema:Place ;
-        schema:name         "Brescia" ;
-        geo:lat             "45.538888888889"^^xsd:float ;
-        geo:long            "10.220280555556"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/IT> ;
-        ex:nut0_name        "Italy" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/ITC> ;
-        ex:nut1_name        "Nord-Ovest" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/ITC4> ;
-        ex:nut2_name        "Lombardia" ;
-        ex:nut2_population  "9976509"^^xsd:int ;
-        ex:nut2_gdp         "439986.38"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/ITC47> ;
-        ex:nut3_name        "Brescia" ;
-        ex:nut3_population  "1257326"^^xsd:int ;
-        ex:nut3_gdp         "45428.4"^^xsd:float .
 
 <https://www.wikidata.org/wiki/Q86355050>
         rdf:type        foaf:Person ;
@@ -18342,24 +18106,6 @@
         ex:medal_type  "gold" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q116829973> .
 
-<https://www.wikidata.org/wiki/Q90>
-        rdf:type            schema:Place ;
-        schema:name         "Paris" ;
-        geo:lat             "48.8566666666667"^^xsd:float ;
-        geo:long            "2.35222222222222"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/FR> ;
-        ex:nut0_name        "France" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/FR1> ;
-        ex:nut1_name        "Ile-de-France" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/FR10> ;
-        ex:nut2_name        "Ile-de-France" ;
-        ex:nut2_population  "12388388"^^xsd:int ;
-        ex:nut2_gdp         "782639.16"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/FR101> ;
-        ex:nut3_name        "Paris" ;
-        ex:nut3_population  "2104154"^^xsd:int ;
-        ex:nut3_gdp         "252252.48"^^xsd:float .
-
 <https://www.wikidata.org/wiki/Q22921561>
         rdf:type        foaf:Person ;
         rdfs:seeAlso    "https://en.wikipedia.org/wiki/Marie-%C3%88ve_Gahi%C3%A9" ;
@@ -18456,21 +18202,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q84> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q42911843> ;
         dbo:sport       "modern pentathlon" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q28> .
-
-<https://www.wikidata.org/wiki/Q42911843>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Hungary_at_the_2024_Summer_Olympics" ;
-        schema:name   "Hungary at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q28>
-        rdf:type                   dbo:country ;
-        schema:name                "Hungary" ;
-        dbpage:ISO_3166-1_alpha-2  "HU" ;
-        dbpage:ISO_3166-1_alpha-3  "HUN" .
-
-<https://www.wikidata.org/wiki/Q56600031>
-        ex:won_medal  <medal_615> .
+        dbo:country     <https://www.wikidata.org/wiki/Q28> ;
+        ex:won_medal    <medal_615> .
 
 <medal_615>  rdf:type  ex:medal ;
         ex:medal_type  "gold" ;
@@ -18480,22 +18213,6 @@
         rdf:type      schema:Event ;
         rdfs:seeAlso  "https://en.wikipedia.org/wiki/Modern_pentathlon_at_the_2024_Summer_Olympics_%E2%80%93_Women%27s" ;
         schema:name   "modern pentathlon at the 2024 Summer Olympics – women's" .
-
-<https://www.wikidata.org/wiki/Q84>
-        rdf:type            schema:Place ;
-        schema:name         "London" ;
-        geo:lat             "51.507222222222"^^xsd:float ;
-        geo:long            "-0.1275"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/UK> ;
-        ex:nut0_name        "United Kingdom" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/UKI> ;
-        ex:nut1_name        "London" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/UKI3> ;
-        ex:nut2_name        "Inner London — West" ;
-        ex:nut2_population  "1190513"^^xsd:int ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/UKI32> ;
-        ex:nut3_name        "Westminster" ;
-        ex:nut3_population  "253137"^^xsd:int .
 
 <https://www.wikidata.org/wiki/Q3588000>
         rdf:type        foaf:Person ;
@@ -18579,43 +18296,12 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q727> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q42911949> ;
         dbo:sport       "rowing" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q55> .
-
-<https://www.wikidata.org/wiki/Q42911949>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Netherlands_at_the_2024_Summer_Olympics" ;
-        schema:name   "Netherlands at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q55>
-        rdf:type                   dbo:country ;
-        schema:name                "Netherlands" ;
-        dbpage:ISO_3166-1_alpha-2  "NL" ;
-        dbpage:ISO_3166-1_alpha-3  "NLD" .
-
-<https://www.wikidata.org/wiki/Q61711966>
-        ex:won_medal  <medal_618> .
+        dbo:country     <https://www.wikidata.org/wiki/Q55> ;
+        ex:won_medal    <medal_618> .
 
 <medal_618>  rdf:type  ex:medal ;
         ex:medal_type  "bronze" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q116820624> .
-
-<https://www.wikidata.org/wiki/Q727>
-        rdf:type            schema:Place ;
-        schema:name         "Amsterdam" ;
-        geo:lat             "52.3727777777778"^^xsd:float ;
-        geo:long            "4.89361111111111"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/NL> ;
-        ex:nut0_name        "Netherlands" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/NL3> ;
-        ex:nut1_name        "West-Nederland" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/NL32> ;
-        ex:nut2_name        "Noord-Holland" ;
-        ex:nut2_population  "2952622"^^xsd:int ;
-        ex:nut2_gdp         "203765.09"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/NL329> ;
-        ex:nut3_name        "Groot-Amsterdam" ;
-        ex:nut3_population  "1456187"^^xsd:int ;
-        ex:nut3_gdp         "129391.42"^^xsd:float .
 
 <https://www.wikidata.org/wiki/Q113591544>
         rdf:type        foaf:Person ;
@@ -18767,21 +18453,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q217057> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114244837> ;
         dbo:sport       "rowing" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q27> .
-
-<https://www.wikidata.org/wiki/Q114244837>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Ireland_at_the_2024_Summer_Olympics" ;
-        schema:name   "Ireland at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q27>
-        rdf:type                   dbo:country ;
-        schema:name                "Republic of Ireland" ;
-        dbpage:ISO_3166-1_alpha-2  "IE" ;
-        dbpage:ISO_3166-1_alpha-3  "IRL" .
-
-<https://www.wikidata.org/wiki/Q100895363>
-        ex:won_medal  <medal_623> .
+        dbo:country     <https://www.wikidata.org/wiki/Q27> ;
+        ex:won_medal    <medal_623> .
 
 <medal_623>  rdf:type  ex:medal ;
         ex:medal_type  "bronze" ;
@@ -19068,21 +18741,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q106681> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114244612> ;
         dbo:sport       "rowing" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q36> .
-
-<https://www.wikidata.org/wiki/Q114244612>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Poland_at_the_2024_Summer_Olympics" ;
-        schema:name   "Poland at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q36>
-        rdf:type                   dbo:country ;
-        schema:name                "Poland" ;
-        dbpage:ISO_3166-1_alpha-2  "PL" ;
-        dbpage:ISO_3166-1_alpha-3  "POL" .
-
-<https://www.wikidata.org/wiki/Q64287046>
-        ex:won_medal  <medal_633> .
+        dbo:country     <https://www.wikidata.org/wiki/Q36> ;
+        ex:won_medal    <medal_633> .
 
 <medal_633>  rdf:type  ex:medal ;
         ex:medal_type  "bronze" ;
@@ -19165,21 +18825,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q1435> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q42911724> ;
         dbo:sport       "rowing" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q224> .
-
-<https://www.wikidata.org/wiki/Q42911724>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Croatia_at_the_2024_Summer_Olympics" ;
-        schema:name   "Croatia at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q224>
-        rdf:type                   dbo:country ;
-        schema:name                "Croatia" ;
-        dbpage:ISO_3166-1_alpha-2  "HR" ;
-        dbpage:ISO_3166-1_alpha-3  "HRV" .
-
-<https://www.wikidata.org/wiki/Q1897931>
-        ex:won_medal  <medal_636> .
+        dbo:country     <https://www.wikidata.org/wiki/Q224> ;
+        ex:won_medal    <medal_636> .
 
 <medal_636>  rdf:type  ex:medal ;
         ex:medal_type  "gold" ;
@@ -19189,24 +18836,6 @@
         rdf:type      schema:Event ;
         rdfs:seeAlso  "https://en.wikipedia.org/wiki/Rowing_at_the_2024_Summer_Olympics_%E2%80%93_Men%27s_coxless_pair" ;
         schema:name   "rowing at the 2024 Summer Olympics – men's pair" .
-
-<https://www.wikidata.org/wiki/Q1435>
-        rdf:type            schema:Place ;
-        schema:name         "Zagreb" ;
-        geo:lat             "45.8130555555556"^^xsd:float ;
-        geo:long            "15.9772222222222"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/HR> ;
-        ex:nut0_name        "Croatia" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/HR0> ;
-        ex:nut1_name        "Hrvatska" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/HR05> ;
-        ex:nut2_name        "Grad Zagreb" ;
-        ex:nut2_population  "768624"^^xsd:int ;
-        ex:nut2_gdp         "23122.66"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/HR050> ;
-        ex:nut3_name        "Grad Zagreb" ;
-        ex:nut3_population  "768624"^^xsd:int ;
-        ex:nut3_gdp         "23122.66"^^xsd:float .
 
 <https://www.wikidata.org/wiki/Q176317>
         rdf:type        foaf:Person ;
@@ -19864,24 +19493,6 @@
         ex:medal_type  "bronze" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q116820672> .
 
-<https://www.wikidata.org/wiki/Q17151>
-        rdf:type            schema:Place ;
-        schema:name         "Thessaloniki" ;
-        geo:lat             "40.6402777777778"^^xsd:float ;
-        geo:long            "22.9355555555556"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/EL> ;
-        ex:nut0_name        "Greece" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/EL5> ;
-        ex:nut1_name        "Voreia Elláda" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/EL52> ;
-        ex:nut2_name        "Kentriki Makedonia" ;
-        ex:nut2_population  "1782630"^^xsd:int ;
-        ex:nut2_gdp         "28418.24"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/EL522> ;
-        ex:nut3_name        "Thessaloniki" ;
-        ex:nut3_population  "1089819"^^xsd:int ;
-        ex:nut3_gdp         "16002.59"^^xsd:float .
-
 <https://www.wikidata.org/wiki/Q47465503>
         rdf:type        foaf:Person ;
         rdfs:seeAlso    "https://en.wikipedia.org/wiki/Karolien_Florijn" ;
@@ -19912,21 +19523,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q191015> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q42912127> ;
         dbo:sport       "rowing" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q37> .
-
-<https://www.wikidata.org/wiki/Q42912127>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Lithuania_at_the_2024_Summer_Olympics" ;
-        schema:name   "Lithuania at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q37>
-        rdf:type                   dbo:country ;
-        schema:name                "Lithuania" ;
-        dbpage:ISO_3166-1_alpha-2  "LT" ;
-        dbpage:ISO_3166-1_alpha-3  "LTU" .
-
-<https://www.wikidata.org/wiki/Q81499197>
-        ex:won_medal  <medal_661> .
+        dbo:country     <https://www.wikidata.org/wiki/Q37> ;
+        ex:won_medal    <medal_661> .
 
 <medal_661>  rdf:type  ex:medal ;
         ex:medal_type  "bronze" ;
@@ -20171,22 +19769,6 @@
         ex:medal_type  "gold" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q116820678> .
 
-<https://www.wikidata.org/wiki/Q39121>
-        rdf:type            schema:Place ;
-        schema:name         "Leeds" ;
-        geo:lat             "53.7975"^^xsd:float ;
-        geo:long            "-1.54361111111111"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/UK> ;
-        ex:nut0_name        "United Kingdom" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/UKE> ;
-        ex:nut1_name        "Yorkshire and the Humber" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/UKE4> ;
-        ex:nut2_name        "West Yorkshire" ;
-        ex:nut2_population  "2324560"^^xsd:int ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/UKE42> ;
-        ex:nut3_name        "Leeds" ;
-        ex:nut3_population  "792525"^^xsd:int .
-
 <https://www.wikidata.org/wiki/Q61712226>
         rdf:type        foaf:Person ;
         rdfs:seeAlso    "https://en.wikipedia.org/wiki/Laila_Youssifou" ;
@@ -20202,6 +19784,9 @@
 <medal_669>  rdf:type  ex:medal ;
         ex:medal_type  "silver" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q116820678> .
+
+<https://www.wikidata.org/wiki/Q116820678>
+        schema:name  "rowing at the 2024 Summer Olympics �� women's quadruple sculls" .
 
 <https://www.wikidata.org/wiki/Q113595724>
         rdf:type        foaf:Person ;
@@ -20445,24 +20030,6 @@
         ex:medal_type  "gold" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q116820675> .
 
-<https://www.wikidata.org/wiki/Q1310>
-        rdf:type            schema:Place ;
-        schema:name         "Arnhem" ;
-        geo:lat             "51.983333333333"^^xsd:float ;
-        geo:long            "5.9166666666667"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/NL> ;
-        ex:nut0_name        "Netherlands" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/NL2> ;
-        ex:nut1_name        "Oost-Nederland" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/NL22> ;
-        ex:nut2_name        "Gelderland" ;
-        ex:nut2_population  "2133708"^^xsd:int ;
-        ex:nut2_gdp         "95415.32"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/NL226> ;
-        ex:nut3_name        "Arnhem/Nijmegen" ;
-        ex:nut3_population  "756995"^^xsd:int ;
-        ex:nut3_gdp         "31870.69"^^xsd:float .
-
 <https://www.wikidata.org/wiki/Q113524327>
         rdf:type        foaf:Person ;
         rdfs:seeAlso    "https://en.wikipedia.org/wiki/Tinka_Offereins" ;
@@ -20592,22 +20159,6 @@
 <medal_684>  rdf:type  ex:medal ;
         ex:medal_type  "silver" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q116820675> .
-
-<https://www.wikidata.org/wiki/Q1425428>
-        rdf:type            schema:Place ;
-        schema:name         "Newcastle upon Tyne" ;
-        geo:lat             "54.977777777778"^^xsd:float ;
-        geo:long            "-1.6133333333333"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/UK> ;
-        ex:nut0_name        "United Kingdom" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/UKC> ;
-        ex:nut1_name        "North East (England)" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/UKC2> ;
-        ex:nut2_name        "Northumberland and Tyne and Wear" ;
-        ex:nut2_population  "1455437"^^xsd:int ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/UKC22> ;
-        ex:nut3_name        "Tyneside" ;
-        ex:nut3_population  "858694"^^xsd:int .
 
 <https://www.wikidata.org/wiki/Q61715051>
         rdf:type        foaf:Person ;
@@ -21441,24 +20992,6 @@
         ex:medal_type  "gold" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q115799997> .
 
-<https://www.wikidata.org/wiki/Q237281>
-        rdf:type            schema:Place ;
-        schema:name         "Le Chesnay" ;
-        geo:lat             "48.820277777778"^^xsd:float ;
-        geo:long            "2.1302777777778"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/FR> ;
-        ex:nut0_name        "France" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/FR1> ;
-        ex:nut1_name        "Ile-de-France" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/FR10> ;
-        ex:nut2_name        "Ile-de-France" ;
-        ex:nut2_population  "12388388"^^xsd:int ;
-        ex:nut2_gdp         "782639.16"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/FR103> ;
-        ex:nut3_name        "Yvelines " ;
-        ex:nut3_population  "1467834"^^xsd:int ;
-        ex:nut3_gdp         "59887.97"^^xsd:float .
-
 <https://www.wikidata.org/wiki/Q20666534>
         rdf:type        foaf:Person ;
         rdfs:seeAlso    "https://en.wikipedia.org/wiki/Antoine_Dupont" ;
@@ -21542,24 +21075,6 @@
 <medal_720>  rdf:type  ex:medal ;
         ex:medal_type  "gold" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q115799997> .
-
-<https://www.wikidata.org/wiki/Q7880>
-        rdf:type            schema:Place ;
-        schema:name         "Toulouse" ;
-        geo:lat             "43.604444444444"^^xsd:float ;
-        geo:long            "1.4438888888889"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/FR> ;
-        ex:nut0_name        "France" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/FRJ> ;
-        ex:nut1_name        "Occitanie" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/FRJ2> ;
-        ex:nut2_name        "Midi-Pyrénées" ;
-        ex:nut2_population  "3168890"^^xsd:int ;
-        ex:nut2_gdp         "107148.04"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/FRJ23> ;
-        ex:nut3_name        "Haute-Garonne" ;
-        ex:nut3_population  "1470355"^^xsd:int ;
-        ex:nut3_gdp         "59033.22"^^xsd:float .
 
 <https://www.wikidata.org/wiki/Q109311576>
         rdf:type        foaf:Person ;
@@ -21819,22 +21334,6 @@
         ex:medal_type  "bronze" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q117156632> .
 
-<https://www.wikidata.org/wiki/Q41262>
-        rdf:type            schema:Place ;
-        schema:name         "Nottingham" ;
-        geo:lat             "52.955"^^xsd:float ;
-        geo:long            "-1.1491666666667"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/UK> ;
-        ex:nut0_name        "United Kingdom" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/UKF> ;
-        ex:nut1_name        "East Midlands (England)" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/UKF1> ;
-        ex:nut2_name        "Derbyshire and Nottinghamshire" ;
-        ex:nut2_population  "2210381"^^xsd:int ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/UKF14> ;
-        ex:nut3_name        "Nottingham" ;
-        ex:nut3_population  "331297"^^xsd:int .
-
 <https://www.wikidata.org/wiki/Q98807624>
         rdf:type        foaf:Person ;
         rdfs:seeAlso    "https://en.wikipedia.org/wiki/Ellie_Aldridge" ;
@@ -22061,21 +21560,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q13383459> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q42912047> ;
         dbo:sport       "sailing" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q34> .
-
-<https://www.wikidata.org/wiki/Q42912047>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Sweden_at_the_2024_Summer_Olympics" ;
-        schema:name   "Sweden at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q34>
-        rdf:type                   dbo:country ;
-        schema:name                "Sweden" ;
-        dbpage:ISO_3166-1_alpha-2  "SE" ;
-        dbpage:ISO_3166-1_alpha-3  "SWE" .
-
-<https://www.wikidata.org/wiki/Q76762254>
-        ex:won_medal  <medal_735> .
+        dbo:country     <https://www.wikidata.org/wiki/Q34> ;
+        ex:won_medal    <medal_735> .
 
 <medal_735>  rdf:type  ex:medal ;
         ex:medal_type  "silver" ;
@@ -22148,24 +21634,6 @@
 <medal_737>  rdf:type  ex:medal ;
         ex:medal_type  "bronze" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q117156661> .
-
-<https://www.wikidata.org/wiki/Q1479>
-        rdf:type            schema:Place ;
-        schema:name         "Bordeaux" ;
-        geo:lat             "44.837777777778"^^xsd:float ;
-        geo:long            "-0.57944444444444"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/FR> ;
-        ex:nut0_name        "France" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/FRI> ;
-        ex:nut1_name        "Nouvelle-Aquitaine" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/FRI1> ;
-        ex:nut2_name        "Aquitaine" ;
-        ex:nut2_population  "3566828"^^xsd:int ;
-        ex:nut2_gdp         "120683.33"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/FRI12> ;
-        ex:nut3_name        "Gironde" ;
-        ex:nut3_population  "1690231"^^xsd:int ;
-        ex:nut3_gdp         "61278.95"^^xsd:float .
 
 <https://www.wikidata.org/wiki/Q2960909>
         rdf:type        foaf:Person ;
@@ -22633,21 +22101,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q68522> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114244740> ;
         dbo:sport       "shooting sport" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q39> .
-
-<https://www.wikidata.org/wiki/Q114244740>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Switzerland_at_the_2024_Summer_Olympics" ;
-        schema:name   "Switzerland at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q39>
-        rdf:type                   dbo:country ;
-        schema:name                "Switzerland" ;
-        dbpage:ISO_3166-1_alpha-2  "CH" ;
-        dbpage:ISO_3166-1_alpha-3  "CHE" .
-
-<https://www.wikidata.org/wiki/Q124714616>
-        ex:won_medal  <medal_751> .
+        dbo:country     <https://www.wikidata.org/wiki/Q39> ;
+        ex:won_medal    <medal_751> .
 
 <medal_751>  rdf:type  ex:medal ;
         ex:medal_type  "bronze" ;
@@ -22800,21 +22255,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q3711> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114753567> ;
         dbo:sport       "shooting sport" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q403> .
-
-<https://www.wikidata.org/wiki/Q114753567>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Serbia_at_the_2024_Summer_Olympics" ;
-        schema:name   "Serbia at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q403>
-        rdf:type                   dbo:country ;
-        schema:name                "Serbia" ;
-        dbpage:ISO_3166-1_alpha-2  "RS" ;
-        dbpage:ISO_3166-1_alpha-3  "SRB" .
-
-<https://www.wikidata.org/wiki/Q4070470>
-        ex:won_medal  <medal_755> .
+        dbo:country     <https://www.wikidata.org/wiki/Q403> ;
+        ex:won_medal    <medal_755> .
 
 <medal_755>  rdf:type  ex:medal ;
         ex:medal_type  "gold" ;
@@ -22825,23 +22267,6 @@
         rdfs:seeAlso  "https://en.wikipedia.org/wiki/Shooting_at_the_2024_Summer_Olympics_%E2%80%93_Mixed_10_metre_air_pistol_team" ;
         schema:name   "shooting at the 2024 Summer Olympics – mixed 10 metre air pistol team" .
 
-<https://www.wikidata.org/wiki/Q3711>
-        rdf:type            schema:Place ;
-        schema:name         "Belgrade" ;
-        geo:lat             "44.8177777777778"^^xsd:float ;
-        geo:long            "20.4569444444444"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/RS> ;
-        ex:nut0_name        "Serbia" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/RS1> ;
-        ex:nut1_name        "Serbia - sever" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/RS11> ;
-        ex:nut2_name        "City of Belgrade" ;
-        ex:nut2_population  "1683033"^^xsd:int ;
-        ex:nut2_gdp         "24177.11"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/RS110> ;
-        ex:nut3_name        "City of Belgrade" ;
-        ex:nut3_population  "1683033"^^xsd:int .
-
 <https://www.wikidata.org/wiki/Q125361685>
         rdf:type        foaf:Person ;
         rdfs:seeAlso    "https://en.wikipedia.org/wiki/%C5%9Eevval_%C4%B0layda_Tarhan" ;
@@ -22851,43 +22276,12 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q3640> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q116778664> ;
         dbo:sport       "shooting sport" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q43> .
-
-<https://www.wikidata.org/wiki/Q116778664>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Turkey_at_the_2024_Summer_Olympics" ;
-        schema:name   "Turkey at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q43>
-        rdf:type                   dbo:country ;
-        schema:name                "Turkey" ;
-        dbpage:ISO_3166-1_alpha-2  "TR" ;
-        dbpage:ISO_3166-1_alpha-3  "TUR" .
-
-<https://www.wikidata.org/wiki/Q125361685>
-        ex:won_medal  <medal_756> .
+        dbo:country     <https://www.wikidata.org/wiki/Q43> ;
+        ex:won_medal    <medal_756> .
 
 <medal_756>  rdf:type  ex:medal ;
         ex:medal_type  "silver" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q116496129> .
-
-<https://www.wikidata.org/wiki/Q3640>
-        rdf:type            schema:Place ;
-        schema:name         "Ankara" ;
-        geo:lat             "39.93576"^^xsd:float ;
-        geo:long            "32.83869"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/TR> ;
-        ex:nut0_name        "Turkey" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/TR5> ;
-        ex:nut1_name        "Batı Anadolu" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/TR51> ;
-        ex:nut2_name        "Ankara" ;
-        ex:nut2_population  "5782285"^^xsd:int ;
-        ex:nut2_gdp         "76387.2"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/TR510> ;
-        ex:nut3_name        "Ankara" ;
-        ex:nut3_population  "5782285"^^xsd:int ;
-        ex:nut3_gdp         "76387.2"^^xsd:float .
 
 <https://www.wikidata.org/wiki/Q8061940>
         rdf:type        foaf:Person ;
@@ -23195,24 +22589,6 @@
         ex:medal_type  "bronze" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q117156517> .
 
-<https://www.wikidata.org/wiki/Q106281>
-        rdf:type            schema:Place ;
-        schema:name         "Tarnów" ;
-        geo:lat             "50.0125"^^xsd:float ;
-        geo:long            "20.988333333333"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/PL> ;
-        ex:nut0_name        "Poland" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/PL2> ;
-        ex:nut1_name        "Makroregion południowy" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/PL21> ;
-        ex:nut2_name        "Małopolskie" ;
-        ex:nut2_population  "3319305"^^xsd:int ;
-        ex:nut2_gdp         "52686.77"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/PL217> ;
-        ex:nut3_name        "Tarnowski" ;
-        ex:nut3_population  "424550"^^xsd:int ;
-        ex:nut3_gdp         "4310.13"^^xsd:float .
-
 <https://www.wikidata.org/wiki/Q16646006>
         rdf:type        foaf:Person ;
         rdfs:seeAlso    "https://en.wikipedia.org/wiki/Johanne_Defay" ;
@@ -23410,24 +22786,6 @@
         rdf:type      schema:Event ;
         rdfs:seeAlso  "https://en.wikipedia.org/wiki/Swimming_at_the_2024_Summer_Olympics_%E2%80%93_Men%27s_400_metre_freestyle" ;
         schema:name   "swimming at the 2024 Summer Olympics – men's 400 metre freestyle" .
-
-<https://www.wikidata.org/wiki/Q1733>
-        rdf:type            schema:Place ;
-        schema:name         "Magdeburg" ;
-        geo:lat             "52.1315889"^^xsd:float ;
-        geo:long            "11.6399609"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/DE> ;
-        ex:nut0_name        "Germany" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/DEE> ;
-        ex:nut1_name        "Sachsen-Anhalt" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/DEE0> ;
-        ex:nut2_name        "Sachsen-Anhalt" ;
-        ex:nut2_population  "2186643"^^xsd:int ;
-        ex:nut2_gdp         "75193.75"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/DEE03> ;
-        ex:nut3_name        "Magdeburg, Kreisfreie Stadt" ;
-        ex:nut3_population  "239364"^^xsd:int ;
-        ex:nut3_gdp         "9019.72"^^xsd:float .
 
 <https://www.wikidata.org/wiki/Q107562832>
         rdf:type        foaf:Person ;
@@ -23760,24 +23118,6 @@
         rdfs:seeAlso  "https://en.wikipedia.org/wiki/Swimming_at_the_2024_Summer_Olympics_%E2%80%93_Men%27s_100_metre_butterfly" ;
         schema:name   "swimming at the 2024 Summer Olympics – men's 100 metre butterfly" .
 
-<https://www.wikidata.org/wiki/Q1781>
-        rdf:type            schema:Place ;
-        schema:name         "Budapest" ;
-        geo:lat             "47.498333333333"^^xsd:float ;
-        geo:long            "19.040833333333"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/HU> ;
-        ex:nut0_name        "Hungary" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/HU1> ;
-        ex:nut1_name        "Közép-Magyarország" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/HU11> ;
-        ex:nut2_name        "Budapest" ;
-        ex:nut2_population  "1671004"^^xsd:int ;
-        ex:nut2_gdp         "61923.29"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/HU110> ;
-        ex:nut3_name        "Budapest" ;
-        ex:nut3_population  "1671004"^^xsd:int ;
-        ex:nut3_gdp         "61923.29"^^xsd:float .
-
 <https://www.wikidata.org/wiki/Q63246909>
         ex:won_medal  <medal_785> .
 
@@ -23985,22 +23325,6 @@
         rdf:type      schema:Event ;
         rdfs:seeAlso  "https://en.wikipedia.org/wiki/Swimming_at_the_2024_Summer_Olympics_%E2%80%93_Men%27s_4_%C3%97_200_metre_freestyle_relay" ;
         schema:name   "swimming at the 2024 Summer Olympics – men's 4 × 200 metre freestyle relay" .
-
-<https://www.wikidata.org/wiki/Q47822>
-        rdf:type            schema:Place ;
-        schema:name         "Bury" ;
-        geo:lat             "53.59315"^^xsd:float ;
-        geo:long            "-2.2985527777778"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/UK> ;
-        ex:nut0_name        "United Kingdom" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/UKD> ;
-        ex:nut1_name        "North West (England)" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/UKD3> ;
-        ex:nut2_name        "Greater Manchester" ;
-        ex:nut2_population  "2822003"^^xsd:int ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/UKD37> ;
-        ex:nut3_name        "Greater Manchester North East" ;
-        ex:nut3_population  "645740"^^xsd:int .
 
 <https://www.wikidata.org/wiki/Q56020505>
         rdf:type        foaf:Person ;
@@ -24346,24 +23670,6 @@
         rdfs:seeAlso  "https://en.wikipedia.org/wiki/Swimming_at_the_2024_Summer_Olympics_%E2%80%93_Women%27s_1500_metre_freestyle" ;
         schema:name   "Swimming at the 2024 Summer Olympics – Women's 1500 metre freestyle" .
 
-<https://www.wikidata.org/wiki/Q64>
-        rdf:type            schema:Place ;
-        schema:name         "Berlin" ;
-        geo:lat             "52.516666666667"^^xsd:float ;
-        geo:long            "13.383333333333"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/DE> ;
-        ex:nut0_name        "Germany" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/DE3> ;
-        ex:nut1_name        "Berlin" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/DE30> ;
-        ex:nut2_name        "Berlin" ;
-        ex:nut2_population  "3755251"^^xsd:int ;
-        ex:nut2_gdp         "180289"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/DE300> ;
-        ex:nut3_name        "Berlin" ;
-        ex:nut3_population  "3755251"^^xsd:int ;
-        ex:nut3_gdp         "166036.11"^^xsd:float .
-
 <https://www.wikidata.org/wiki/Q21070502>
         rdf:type        foaf:Person ;
         rdfs:seeAlso    "https://en.wikipedia.org/wiki/Tes_Schouten" ;
@@ -24423,24 +23729,6 @@
         rdf:type      schema:Event ;
         rdfs:seeAlso  "https://en.wikipedia.org/wiki/Swimming_at_the_2024_Summer_Olympics_%E2%80%93_Women%27s_marathon_10_kilometre" ;
         schema:name   "swimming at the 2024 Summer Olympics – women's marathon 10 kilometre" .
-
-<https://www.wikidata.org/wiki/Q10027>
-        rdf:type            schema:Place ;
-        schema:name         "Baarn" ;
-        geo:lat             "52.2125"^^xsd:float ;
-        geo:long            "5.2861"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/NL> ;
-        ex:nut0_name        "Netherlands" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/NL3> ;
-        ex:nut1_name        "West-Nederland" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/NL31> ;
-        ex:nut2_name        "Utrecht" ;
-        ex:nut2_population  "1387643"^^xsd:int ;
-        ex:nut2_gdp         "88660.46"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/NL310> ;
-        ex:nut3_name        "Utrecht" ;
-        ex:nut3_population  "1387643"^^xsd:int ;
-        ex:nut3_gdp         "83277.67"^^xsd:float .
 
 <https://www.wikidata.org/wiki/Q112729533>
         rdf:type        foaf:Person ;
@@ -24749,22 +24037,6 @@
         rdfs:seeAlso  "https://en.wikipedia.org/wiki/Taekwondo_at_the_2024_Summer_Olympics_%E2%80%93_Men%27s_%2B80_kg" ;
         schema:name   "taekwondo at the 2024 Summer Olympics – men's +80 kg" .
 
-<https://www.wikidata.org/wiki/Q201812>
-        rdf:type            schema:Place ;
-        schema:name         "Huddersfield" ;
-        geo:lat             "53.645"^^xsd:float ;
-        geo:long            "-1.7797222222222"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/UK> ;
-        ex:nut0_name        "United Kingdom" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/UKE> ;
-        ex:nut1_name        "Yorkshire and the Humber" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/UKE4> ;
-        ex:nut2_name        "West Yorkshire" ;
-        ex:nut2_population  "2324560"^^xsd:int ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/UKE44> ;
-        ex:nut3_name        "Calderdale and Kirklees" ;
-        ex:nut3_population  "651117"^^xsd:int .
-
 <https://www.wikidata.org/wiki/Q125749514>
         rdf:type        foaf:Person ;
         rdfs:seeAlso    "https://en.wikipedia.org/wiki/Viviana_M%C3%A1rton" ;
@@ -24863,21 +24135,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q206961> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114244785> ;
         dbo:sport       "taekwondo" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q142> .
-
-<https://www.wikidata.org/wiki/Q114244785>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/France_at_the_2024_Summer_Olympics" ;
-        schema:name   "France at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q142>
-        rdf:type                   dbo:country ;
-        schema:name                "France" ;
-        dbpage:ISO_3166-1_alpha-2  "FR" ;
-        dbpage:ISO_3166-1_alpha-3  "FRA" .
-
-<https://www.wikidata.org/wiki/Q77977043>
-        ex:won_medal  <medal_829> .
+        dbo:country     <https://www.wikidata.org/wiki/Q142> ;
+        ex:won_medal    <medal_829> .
 
 <medal_829>  rdf:type  ex:medal ;
         ex:medal_type  "gold" ;
@@ -25200,21 +24459,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q180139> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114233084> ;
         dbo:sport       "tennis" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q213> .
-
-<https://www.wikidata.org/wiki/Q114233084>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Czech_Republic_at_the_2024_Summer_Olympics" ;
-        schema:name   "Czech Republic at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q213>
-        rdf:type                   dbo:country ;
-        schema:name                "Czech Republic" ;
-        dbpage:ISO_3166-1_alpha-2  "CZ" ;
-        dbpage:ISO_3166-1_alpha-3  "CZE" .
-
-<https://www.wikidata.org/wiki/Q3720044>
-        ex:won_medal  <medal_839> .
+        dbo:country     <https://www.wikidata.org/wiki/Q213> ;
+        ex:won_medal    <medal_839> .
 
 <medal_839>  rdf:type  ex:medal ;
         ex:medal_type  "gold" ;
@@ -25702,21 +24948,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q64> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114132359> ;
         dbo:sport       "volleyball" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q183> .
-
-<https://www.wikidata.org/wiki/Q114132359>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Germany_at_the_2024_Summer_Olympics" ;
-        schema:name   "Germany at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q183>
-        rdf:type                   dbo:country ;
-        schema:name                "Germany" ;
-        dbpage:ISO_3166-1_alpha-2  "DE" ;
-        dbpage:ISO_3166-1_alpha-3  "DEU" .
-
-<https://www.wikidata.org/wiki/Q28819428>
-        ex:won_medal  <medal_856> .
+        dbo:country     <https://www.wikidata.org/wiki/Q183> ;
+        ex:won_medal    <medal_856> .
 
 <medal_856>  rdf:type  ex:medal ;
         ex:medal_type  "silver" ;
@@ -26487,24 +25720,6 @@
         ex:medal_type  "silver" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q115799687> .
 
-<https://www.wikidata.org/wiki/Q802>
-        rdf:type            schema:Place ;
-        schema:name         "Nowy Sącz" ;
-        geo:lat             "49.623888888889"^^xsd:float ;
-        geo:long            "20.697222222222"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/PL> ;
-        ex:nut0_name        "Poland" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/PL2> ;
-        ex:nut1_name        "Makroregion południowy" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/PL21> ;
-        ex:nut2_name        "Małopolskie" ;
-        ex:nut2_population  "3319305"^^xsd:int ;
-        ex:nut2_gdp         "52686.77"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/PL218> ;
-        ex:nut3_name        "Nowosądecki" ;
-        ex:nut3_population  "512612"^^xsd:int ;
-        ex:nut3_gdp         "5076.9"^^xsd:float .
-
 <https://www.wikidata.org/wiki/Q20007060>
         rdf:type        foaf:Person ;
         rdfs:seeAlso    "https://en.wikipedia.org/wiki/Mateusz_Bieniek" ;
@@ -26555,24 +25770,6 @@
         ex:medal_type  "silver" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q115799687> .
 
-<https://www.wikidata.org/wiki/Q31487>
-        rdf:type            schema:Place ;
-        schema:name         "Kraków" ;
-        geo:lat             "50.061388888889"^^xsd:float ;
-        geo:long            "19.937222222222"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/PL> ;
-        ex:nut0_name        "Poland" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/PL2> ;
-        ex:nut1_name        "Makroregion południowy" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/PL21> ;
-        ex:nut2_name        "Małopolskie" ;
-        ex:nut2_population  "3319305"^^xsd:int ;
-        ex:nut2_gdp         "52686.77"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/PL213> ;
-        ex:nut3_name        "Miasto Kraków" ;
-        ex:nut3_population  "792655"^^xsd:int ;
-        ex:nut3_gdp         "20469.72"^^xsd:float .
-
 <https://www.wikidata.org/wiki/Q30903360>
         rdf:type        foaf:Person ;
         rdfs:seeAlso    "https://en.wikipedia.org/wiki/Norbert_Huber_(volleyball)" ;
@@ -26616,21 +25813,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q9474> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114244642> ;
         dbo:sport       "volleyball" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q38> .
-
-<https://www.wikidata.org/wiki/Q114244642>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Italy_at_the_2024_Summer_Olympics" ;
-        schema:name   "Italy at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q38>
-        rdf:type                   dbo:country ;
-        schema:name                "Italy" ;
-        dbpage:ISO_3166-1_alpha-2  "IT" ;
-        dbpage:ISO_3166-1_alpha-3  "ITA" .
-
-<https://www.wikidata.org/wiki/Q56635679>
-        ex:won_medal  <medal_885> .
+        dbo:country     <https://www.wikidata.org/wiki/Q38> ;
+        ex:won_medal    <medal_885> .
 
 <medal_885>  rdf:type  ex:medal ;
         ex:medal_type  "gold" ;
@@ -27062,23 +26246,6 @@
         rdf:type      schema:Event ;
         rdfs:seeAlso  "https://en.wikipedia.org/wiki/Water_polo_at_the_2024_Summer_Olympics_%E2%80%93_Men%27s_tournament" ;
         schema:name   "water polo at the 2024 Summer Olympics – men's tournament" .
-
-<https://www.wikidata.org/wiki/Q55630>
-        rdf:type            schema:Place ;
-        schema:name         "Novi Sad" ;
-        geo:lat             "45.264444444444"^^xsd:float ;
-        geo:long            "19.831666666667"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/RS> ;
-        ex:nut0_name        "Serbia" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/RS1> ;
-        ex:nut1_name        "Serbia - sever" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/RS12> ;
-        ex:nut2_name        "Autonomous Province of Vojvodina" ;
-        ex:nut2_population  "1738651"^^xsd:int ;
-        ex:nut2_gdp         "15932.11"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/RS123> ;
-        ex:nut3_name        "Južnobačka oblast" ;
-        ex:nut3_population  "607662"^^xsd:int .
 
 <https://www.wikidata.org/wiki/Q3436894>
         rdf:type        foaf:Person ;
@@ -27607,24 +26774,6 @@
         rdfs:seeAlso  "https://en.wikipedia.org/wiki/Water_polo_at_the_2024_Summer_Olympics_%E2%80%93_Women%27s_tournament" ;
         schema:name   "water polo at the 2024 Summer Olympics – women's tournament" .
 
-<https://www.wikidata.org/wiki/Q2807>
-        rdf:type            schema:Place ;
-        schema:name         "Madrid" ;
-        geo:lat             "40.4169444444444"^^xsd:float ;
-        geo:long            "-3.70333333333333"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/ES> ;
-        ex:nut0_name        "Spain" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/ES3> ;
-        ex:nut1_name        "Comunidad de Madrid" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/ES30> ;
-        ex:nut2_name        "Comunidad de Madrid" ;
-        ex:nut2_population  "6871903"^^xsd:int ;
-        ex:nut2_gdp         "261713.1"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/ES300> ;
-        ex:nut3_name        "Madrid" ;
-        ex:nut3_population  "6871903"^^xsd:int ;
-        ex:nut3_gdp         "237540.31"^^xsd:float .
-
 <https://www.wikidata.org/wiki/Q64390985>
         rdf:type        foaf:Person ;
         rdfs:seeAlso    "https://en.wikipedia.org/wiki/Paula_Cresp%C3%AD" ;
@@ -27772,24 +26921,6 @@
 <medal_929>  rdf:type  ex:medal ;
         ex:medal_type  "gold" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q115800199> .
-
-<https://www.wikidata.org/wiki/Q13939>
-        rdf:type            schema:Place ;
-        schema:name         "Terrassa" ;
-        geo:lat             "41.561111111111"^^xsd:float ;
-        geo:long            "2.0080555555556"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/ES> ;
-        ex:nut0_name        "Spain" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/ES5> ;
-        ex:nut1_name        "Este" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/ES51> ;
-        ex:nut2_name        "Cataluña" ;
-        ex:nut2_population  "7901963"^^xsd:int ;
-        ex:nut2_gdp         "255153.86"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/ES511> ;
-        ex:nut3_name        "Barcelona" ;
-        ex:nut3_population  "5797356"^^xsd:int ;
-        ex:nut3_gdp         "173721.88"^^xsd:float .
 
 <https://www.wikidata.org/wiki/Q3369983>
         rdf:type        foaf:Person ;
@@ -28195,24 +27326,6 @@
         ex:medal_type  "bronze" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q115800199> .
 
-<https://www.wikidata.org/wiki/Q26421>
-        rdf:type            schema:Place ;
-        schema:name         "Dordrecht" ;
-        geo:lat             "51.7958333333333"^^xsd:float ;
-        geo:long            "4.67833333333333"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/NL> ;
-        ex:nut0_name        "Netherlands" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/NL3> ;
-        ex:nut1_name        "West-Nederland" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/NL33> ;
-        ex:nut2_name        "Zuid-Holland" ;
-        ex:nut2_population  "3804906"^^xsd:int ;
-        ex:nut2_gdp         "200451.76"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/NL33A> ;
-        ex:nut3_name        "Zuidoost-Zuid-Holland" ;
-        ex:nut3_population  "379752"^^xsd:int ;
-        ex:nut3_gdp         "17631"^^xsd:float .
-
 <https://www.wikidata.org/wiki/Q127745901>
         rdf:type        foaf:Person ;
         rdfs:seeAlso    "https://en.wikipedia.org/wiki/Nina_ten_Broek" ;
@@ -28228,24 +27341,6 @@
 <medal_944>  rdf:type  ex:medal ;
         ex:medal_type  "bronze" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q115800199> .
-
-<https://www.wikidata.org/wiki/Q992>
-        rdf:type            schema:Place ;
-        schema:name         "Amersfoort" ;
-        geo:lat             "52.15"^^xsd:float ;
-        geo:long            "5.38"^^xsd:float ;
-        ex:nut0_id          <http://data.europa.eu/nuts/code/NL> ;
-        ex:nut0_name        "Netherlands" ;
-        ex:nut1_id          <http://data.europa.eu/nuts/code/NL3> ;
-        ex:nut1_name        "West-Nederland" ;
-        ex:nut2_id          <http://data.europa.eu/nuts/code/NL31> ;
-        ex:nut2_name        "Utrecht" ;
-        ex:nut2_population  "1387643"^^xsd:int ;
-        ex:nut2_gdp         "88660.46"^^xsd:float ;
-        ex:nut3_id          <http://data.europa.eu/nuts/code/NL310> ;
-        ex:nut3_name        "Utrecht" ;
-        ex:nut3_population  "1387643"^^xsd:int ;
-        ex:nut3_gdp         "83277.67"^^xsd:float .
 
 <https://www.wikidata.org/wiki/Q82016500>
         rdf:type        foaf:Person ;
@@ -28358,21 +27453,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q178385> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114244624> ;
         dbo:sport       "weightlifting" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q219> .
-
-<https://www.wikidata.org/wiki/Q114244624>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Bulgaria_at_the_2024_Summer_Olympics" ;
-        schema:name   "Bulgaria at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q219>
-        rdf:type                   dbo:country ;
-        schema:name                "Bulgaria" ;
-        dbpage:ISO_3166-1_alpha-2  "BG" ;
-        dbpage:ISO_3166-1_alpha-3  "BGR" .
-
-<https://www.wikidata.org/wiki/Q26837805>
-        ex:won_medal  <medal_948> .
+        dbo:country     <https://www.wikidata.org/wiki/Q219> ;
+        ex:won_medal    <medal_948> .
 
 <medal_948>  rdf:type  ex:medal ;
         ex:medal_type  "bronze" ;
@@ -28465,21 +27547,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q15634795> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q42911998> ;
         dbo:sport       "weightlifting" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q218> .
-
-<https://www.wikidata.org/wiki/Q42911998>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Romania_at_the_2024_Summer_Olympics" ;
-        schema:name   "Romania at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q218>
-        rdf:type                   dbo:country ;
-        schema:name                "Romania" ;
-        dbpage:ISO_3166-1_alpha-2  "RO" ;
-        dbpage:ISO_3166-1_alpha-3  "ROU" .
-
-<https://www.wikidata.org/wiki/Q94644561>
-        ex:won_medal  <medal_951> .
+        dbo:country     <https://www.wikidata.org/wiki/Q218> ;
+        ex:won_medal    <medal_951> .
 
 <medal_951>  rdf:type  ex:medal ;
         ex:medal_type  "silver" ;
@@ -28517,21 +27586,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q33> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114244710> ;
         dbo:sport       "weightlifting" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q20> .
-
-<https://www.wikidata.org/wiki/Q114244710>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Norway_at_the_2024_Summer_Olympics" ;
-        schema:name   "Norway at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q20>
-        rdf:type                   dbo:country ;
-        schema:name                "Norway" ;
-        dbpage:ISO_3166-1_alpha-2  "NO" ;
-        dbpage:ISO_3166-1_alpha-3  "NOR" .
-
-<https://www.wikidata.org/wiki/Q106571826>
-        ex:won_medal  <medal_952> .
+        dbo:country     <https://www.wikidata.org/wiki/Q20> ;
+        ex:won_medal    <medal_952> .
 
 <medal_952>  rdf:type  ex:medal ;
         ex:medal_type  "gold" ;
@@ -28569,21 +27625,8 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q41262> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q42911977> ;
         dbo:sport       "weightlifting" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q145> .
-
-<https://www.wikidata.org/wiki/Q42911977>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Great_Britain_at_the_2024_Summer_Olympics" ;
-        schema:name   "Great Britain at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q145>
-        rdf:type                   dbo:country ;
-        schema:name                "United Kingdom" ;
-        dbpage:ISO_3166-1_alpha-2  "GB" ;
-        dbpage:ISO_3166-1_alpha-3  "GBR" .
-
-<https://www.wikidata.org/wiki/Q51782259>
-        ex:won_medal  <medal_953> .
+        dbo:country     <https://www.wikidata.org/wiki/Q145> ;
+        ex:won_medal    <medal_953> .
 
 <medal_953>  rdf:type  ex:medal ;
         ex:medal_type  "bronze" ;
@@ -28677,39 +27720,12 @@
         dbo:birthPlace  <https://www.wikidata.org/wiki/Q1899> ;
         ex:delegation   <https://www.wikidata.org/wiki/Q114666626> ;
         dbo:sport       "wrestling" ;
-        dbo:country     <https://www.wikidata.org/wiki/Q212> .
-
-<https://www.wikidata.org/wiki/Q114666626>
-        rdf:type      ex:delegation ;
-        rdfs:seeAlso  "https://en.wikipedia.org/wiki/Ukraine_at_the_2024_Summer_Olympics" ;
-        schema:name   "Ukraine at the 2024 Summer Olympics" .
-
-<https://www.wikidata.org/wiki/Q212>
-        rdf:type                   dbo:country ;
-        schema:name                "Ukraine" ;
-        dbpage:ISO_3166-1_alpha-2  "UA" ;
-        dbpage:ISO_3166-1_alpha-3  "UKR" .
-
-<https://www.wikidata.org/wiki/Q18129428>
-        ex:won_medal  <medal_956> .
+        dbo:country     <https://www.wikidata.org/wiki/Q212> ;
+        ex:won_medal    <medal_956> .
 
 <medal_956>  rdf:type  ex:medal ;
         ex:medal_type  "bronze" ;
         ex:won_at      <https://www.wikidata.org/wiki/Q117156537> .
-
-<https://www.wikidata.org/wiki/Q1899>
-        rdf:type      schema:Place ;
-        schema:name   "Kyiv" ;
-        geo:lat       "50.45"^^xsd:float ;
-        geo:long      "30.523611111111"^^xsd:float ;
-        ex:nut0_id    <http://data.europa.eu/nuts/code/UA> ;
-        ex:nut0_name  "Ukraine" ;
-        ex:nut1_id    <http://data.europa.eu/nuts/code/UA6> ;
-        ex:nut1_name  "Macroregion_06" ;
-        ex:nut2_id    <http://data.europa.eu/nuts/code/UA63> ;
-        ex:nut2_name  "M. Kyiv" ;
-        ex:nut3_id    <http://data.europa.eu/nuts/code/UA630> ;
-        ex:nut3_name  "M. Kyiv" .
 
 <https://www.wikidata.org/wiki/Q69948742>
         rdf:type        foaf:Person ;

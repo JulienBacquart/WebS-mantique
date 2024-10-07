@@ -28,6 +28,16 @@ Cloner le repository :
 
 `cd WebSemantique`
 
-Executer la commande suivante :
+Executer au choix une des commandes suivantes suivant le dataset choisi :
 
-`tarql-1.2/bin/tarql --dedup 10000 transform.sparql > output.ttl`
+- Pour le fichier **2024_medalists_nuts_only.csv** :
+
+`tarql-1.2/bin/tarql --dedup 30000 transform.sparql ./dataset/2024_medalists_nuts_only.csv > 2024_medalists_nuts_only.ttl`
+
+Retourne environ 30 000 triplets.
+
+- Pour le fichier **2024_medalists_all.csv** :
+
+`tarql-1.2/bin/tarql --dedup 60000 transform.sparql ./dataset/2024_medalists_all.csv > 2024_medalists_all.ttl`
+
+Retourne environ 60 000 triplets.
