@@ -1,13 +1,11 @@
 PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX dbp: <https://dbpedia.org/property/>
 PREFIX dbpage: <https://dbpedia.org/page/>
 PREFIX ex: <http://example.org/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema>
 PREFIX schema: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
     ?medalist_id a foaf:Person;
@@ -62,7 +60,7 @@ CONSTRUCT {
     # ?sport_id a dbo:Sport; # Remove and include directly into event ?
     #         schema:name       ?sport.
 }
-FROM <file:./dataset/2024_medalists_nuts_only.csv#encoding=utf-8;header=present;delimiter=comma>
+# FROM <file:./dataset/2024_medalists_nuts_only.csv#encoding=utf-8;header=present;delimiter=comma>
 WHERE {
     # Medalist
     BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?medalist_wikidata_id)) AS ?medalist_id).
