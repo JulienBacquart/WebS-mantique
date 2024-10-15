@@ -41,3 +41,15 @@ Retourne environ 30 000 triplets.
 `tarql-1.2/bin/tarql --dedup 60000 transform.sparql ./dataset/2024_medalists_all.csv > 2024_medalists_all.ttl`
 
 Retourne environ 60 000 triplets.
+
+## Serveur SPARQL avec Docker Compose
+
+Un fichier `compose.yaml` est fourni pour facilement déployer un serveur SPARQL Jena Fuseki, pour le lancer utiliser la commande suivante :
+
+`docker compose up`
+
+Le serveur sera disponible à l'adresse : http://localhost:3030/.⁠
+
+L'utilisateur par défaut est `admin`, le mot de passe par défaut se situe dans le fichier `compose.yaml` et peut être modifié.
+
+Les datasets sont persistés automatiquement dans le volume `fuseki-data`.
