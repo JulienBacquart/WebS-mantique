@@ -1,0 +1,51 @@
+PREFIX schema: <https://schema.org/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbpage:  <https://dbpedia.org/page/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Medal won by a member of the IOC Refugee Olympic Team
+SELECT ?name ?medal_type ?name_event WHERE {
+	?delegation rdf:type ex:delegation ;
+             schema:name "IOC Refugee Olympic Team at the 2024 Summer Olympics" .
+  	?medalist rdf:type foaf:Person ;
+      		foaf:name ?name ;
+        	ex:delegation ?delegation ;
+  			ex:won_medal ?medal .
+  	?medal ex:medal_type ?medal_type ;
+         ex:won_at/schema:name ?name_event .
+}
+
+# Medalists with the most medal
+SELECT ?name_medalist (COUNT(?medal) AS ?nb_medal) WHERE {
+	?medal rdf:type ex:medal ;
+        ex:medal_type ?medal_type .
+    ?medalist ex:won_medal ?medal ;
+              foaf:name ?name_medalist .
+} GROUP BY ?medalist ?name_medalist
+ORDER BY DESC(?nb_medal)
+LIMIT 25
+
+# Total number of medals per country
+SELECT ?country_name (COUNT(?medal) AS ?nb_medal) WHERE {
+	?medal rdf:type ex:medal ;
+        ex:medal_type ?medal_type .
+    ?medalist ex:won_medal ?medal ;
+              dbo:country ?country .
+  	?country schema:name ?country_name .
+} GROUP BY ?country ?country_name
+ORDER BY DESC(?nb_medal)
+LIMIT 25
+
+# Number of medal per region
+SELECT ?nuts2_name (COUNT(?medal) AS ?nb_medal) WHERE {
+	?medal rdf:type ex:medal .
+    ?medalist ex:won_medal ?medal ;
+              dbo:birthPlace ?birth_place .
+  	?birth_place ex:nut2_name ?nuts2_name .
+  MINUS {?birth_place ex:nut2_name "NA"}
+} 
+GROUP BY ?nuts2_name
+ORDER BY DESC(?nb_medal)
+LIMIT 5
