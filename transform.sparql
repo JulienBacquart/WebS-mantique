@@ -64,11 +64,11 @@ CONSTRUCT {
 # FROM <file:./dataset/2024_medalists_nuts_only.csv#encoding=utf-8;header=present;delimiter=comma>
 WHERE {
     # Medalist
-    BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?medalist_wikidata_id)) AS ?medalist_id).
+    BIND (URI(CONCAT("https://www.wikidata.org/entity/", ?medalist_wikidata_id)) AS ?medalist_id).
     BIND (xsd:date(?date_of_birth) AS ?date_of_birth_typed).
 
     # Place of birth
-    BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?place_of_birth_wikidata_id)) AS ?place_of_birth_id).
+    BIND (URI(CONCAT("https://www.wikidata.org/entity/", ?place_of_birth_wikidata_id)) AS ?place_of_birth_id).
     # Latitude and longitude
     BIND (xsd:float(?lat) AS ?lat_typed).
     BIND (xsd:float(?lon) AS ?lon_typed).
@@ -83,22 +83,22 @@ WHERE {
     BIND (xsd:float(?nuts3_gdp) AS ?nuts3_gdp_typed).   # If NA will be dropped
 
     # Delegation
-     BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?delegation_wikidata_id)) AS ?delegation_id).
+     BIND (URI(CONCAT("https://www.wikidata.org/entity/", ?delegation_wikidata_id)) AS ?delegation_id).
 
     # Country
-    BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?country_medal_wikidata_id)) AS ?country_id).
+    BIND (URI(CONCAT("https://www.wikidata.org/entity/", ?country_medal_wikidata_id)) AS ?country_id).
 
     # Medal
     BIND (URI(CONCAT('medal_', STR(?ROWNUM))) AS ?medal_id).
 
     # Event
-    BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?event_wikidata_id)) AS ?event_id).
+    BIND (URI(CONCAT("https://www.wikidata.org/entity/", ?event_wikidata_id)) AS ?event_id).
 
     # # Meta-Event (?!)
-    # BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?event_part_of_wikidata_id)) AS ?meta_event_id).
+    # BIND (URI(CONCAT("https://www.wikidata.org/entity/", ?event_part_of_wikidata_id)) AS ?meta_event_id).
 
     # # Sport
-    # BIND (URI(CONCAT("https://www.wikidata.org/wiki/", ?sport_wikidata_id)) AS ?sport_id).    
+    # BIND (URI(CONCAT("https://www.wikidata.org/entity/", ?sport_wikidata_id)) AS ?sport_id).    
 }
 
 # SELECT (COUNT(*) AS ?count)
