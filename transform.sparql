@@ -46,15 +46,15 @@ CONSTRUCT {
         geo:lat         ?lat_typed;
         geo:long        ?lon_typed;
         ex:nut0_id      ?nuts0_id_uri;
-        ex:nut0_name    ?nuts0_name;
+        ex:nut0_name    ?nuts0_name_fixed;
         ex:nut1_id      ?nuts1_id_uri;
-        ex:nut1_name    ?nuts1_name;
+        ex:nut1_name    ?nuts1_name_fixed;
         ex:nut2_id      ?nuts2_id_uri;
-        ex:nut2_name    ?nuts2_name;
+        ex:nut2_name    ?nuts2_name_fixed;
         ex:nut2_population  ?nuts2_population_typed;
         ex:nut2_gdp     ?nuts2_gdp_typed; # Will be missing if NA
         ex:nut3_id      ?nuts3_id_uri;
-        ex:nut3_name    ?nuts3_name;
+        ex:nut3_name    ?nuts3_name_fixed;
         ex:nut3_population  ?nuts3_population_typed;
         ex:nut3_gdp     ?nuts3_gdp_typed. # Will be missing if NA
 
@@ -68,15 +68,28 @@ WHERE {
     BIND (xsd:date(?date_of_birth) AS ?date_of_birth_typed).
 
     # Place of birth
-    BIND (URI(CONCAT("http://www.wikidata.org/entity/", ?place_of_birth_wikidata_id)) AS ?place_of_birth_id).
+    BIND (IF(?place_of_birth_wikidata_id != 'NA', URI(CONCAT("http://www.wikidata.org/entity/", ?place_of_birth_wikidata_id)), ?nothing) AS ?place_of_birth_id) .
+
     # Latitude and longitude
     BIND (xsd:float(?lat) AS ?lat_typed).
     BIND (xsd:float(?lon) AS ?lon_typed).
-    # Nuts
-    BIND (URI(CONCAT("http://data.europa.eu/nuts/code/", ?nuts0_id)) AS ?nuts0_id_uri).
-    BIND (URI(CONCAT("http://data.europa.eu/nuts/code/", ?nuts1_id)) AS ?nuts1_id_uri).
-    BIND (URI(CONCAT("http://data.europa.eu/nuts/code/", ?nuts2_id)) AS ?nuts2_id_uri).
-    BIND (URI(CONCAT("http://data.europa.eu/nuts/code/", ?nuts3_id)) AS ?nuts3_id_uri).
+    
+    # Nuts 0
+    BIND (IF(?nuts0_id != 'NA', URI(CONCAT("http://data.europa.eu/nuts/code/", ?nuts0_id)), ?nothing) AS ?nuts0_id_uri) .
+    BIND (IF(?nuts0_name != 'NA', ?nuts0_name, ?nothing) AS ?nuts0_name_fixed) .
+
+    # Nuts 1
+    BIND (IF(?nuts1_id != 'NA', URI(CONCAT("http://data.europa.eu/nuts/code/", ?nuts1_id)), ?nothing) AS ?nuts1_id_uri) .
+    BIND (IF(?nuts1_name != 'NA', ?nuts1_name, ?nothing) AS ?nuts1_name_fixed) .
+
+    # Nuts 2
+    BIND (IF(?nuts2_id != 'NA', URI(CONCAT("http://data.europa.eu/nuts/code/", ?nuts2_id)), ?nothing) AS ?nuts2_id_uri) .
+    BIND (IF(?nuts2_name != 'NA', ?nuts2_name, ?nothing) AS ?nuts2_name_fixed) .
+
+    # Nuts 3
+    BIND (IF(?nuts3_id != 'NA', URI(CONCAT("http://data.europa.eu/nuts/code/", ?nuts3_id)), ?nothing) AS ?nuts3_id_uri) .
+    BIND (IF(?nuts3_name != 'NA', ?nuts3_name, ?nothing) AS ?nuts3_name_fixed) .
+
     BIND (xsd:int(?nuts2_population) AS ?nuts2_population_typed).
     BIND (xsd:float(?nuts2_gdp) AS ?nuts2_gdp_typed).   # If NA will be dropped
     BIND (xsd:int(?nuts3_population) AS ?nuts3_population_typed).
@@ -86,7 +99,7 @@ WHERE {
      BIND (URI(CONCAT("http://www.wikidata.org/entity/", ?delegation_wikidata_id)) AS ?delegation_id).
 
     # Country
-    BIND (URI(CONCAT("http://www.wikidata.org/entity/", ?country_medal_wikidata_id)) AS ?country_id).
+    BIND (IF(?country_medal_wikidata_id != 'NA', URI(CONCAT("http://www.wikidata.org/entity/", ?country_medal_wikidata_id)), ?nothing) AS ?country_id) .
 
     # Medal
     BIND (URI(CONCAT('medal_', STR(?ROWNUM))) AS ?medal_id).
