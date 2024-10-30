@@ -27,6 +27,21 @@ SELECT ?name_medalist (COUNT(?medal) AS ?nb_medal) WHERE {
 ORDER BY DESC(?nb_medal)
 LIMIT 25
 
+# Medalists with the most medal, with details of the number of gold, silver and bronze medals
+SELECT ?medalist_name 
+    (STR(COUNT(?medal_type)) AS ?total_medals)	# Use STR() to hide the ^^<http://www.w3.org/2001/XMLSchema#integer>
+	(STR(SUM(IF(?medal_type = "gold", 1, 0))) AS ?nb_gold)  # type annotation in the result
+	(STR(SUM(IF(?medal_type = "silver", 1, 0))) AS ?nb_silver)
+	(STR(SUM(IF(?medal_type = "bronze", 1, 0))) AS ?nb_bronze)
+WHERE {
+  ?medalist foaf:name ?medalist_name ;
+            ex:won_medal ?medal .
+  ?medal ex:medal_type ?medal_type .
+}
+GROUP BY ?medalist_name
+ORDER BY DESC(?total_medals) DESC(?nb_gold) DESC(?nb_silver) DESC(?nb_bronze)
+LIMIT 10
+
 # Total number of medals per country
 SELECT ?country_name (COUNT(?medal) AS ?nb_medal) WHERE {
 	?medal rdf:type ex:medal ;
@@ -37,6 +52,26 @@ SELECT ?country_name (COUNT(?medal) AS ?nb_medal) WHERE {
 } GROUP BY ?country ?country_name
 ORDER BY DESC(?nb_medal)
 LIMIT 25
+
+# Total number of medals per country, with details of the number of gold, silver and bronze medals
+SELECT ?country_name (STR(?total_medals) AS ?total_medal_str) (STR(?nb_gold) AS ?nb_gold_str) (STR(?nb_silver) AS ?nb_silver_str) (STR(?nb_bronze) AS ?nb_bronze_str) WHERE {
+  # Use STR() to hide the ^^<http://www.w3.org/2001/XMLSchema#integer> type annotation in the result
+  SELECT ?country_name 
+    (COUNT(?medal_type) AS ?total_medals)	
+    (SUM(IF(?medal_type = "gold", 1, 0)) AS ?nb_gold)
+    (SUM(IF(?medal_type = "silver", 1, 0)) AS ?nb_silver)
+    (SUM(IF(?medal_type = "bronze", 1, 0)) AS ?nb_bronze)
+  WHERE {
+    ?medalist foaf:name ?medalist_name ;
+              ex:won_medal ?medal ;
+              dbo:country ?country .
+    ?country schema:name ?country_name .
+    ?medal ex:medal_type ?medal_type .
+  }
+  GROUP BY ?country_name
+  ORDER BY DESC(?total_medals) DESC(?nb_gold) DESC(?nb_silver) DESC(?nb_bronze)
+  LIMIT 10
+}
 
 # Number of medal per region
 SELECT ?nuts2_name (COUNT(?medal) AS ?nb_medal) WHERE {
