@@ -54,33 +54,105 @@ ORDER BY DESC(?nb_medal)
 LIMIT 25
 
 # Total number of medals per country, with details of the number of gold, silver and bronze medals
-SELECT ?country_name (STR(?total_medals) AS ?total_medal_str) (STR(?nb_gold) AS ?nb_gold_str) (STR(?nb_silver) AS ?nb_silver_str) (STR(?nb_bronze) AS ?nb_bronze_str) WHERE {
-  # Use STR() to hide the ^^<http://www.w3.org/2001/XMLSchema#integer> type annotation in the result
-  SELECT ?country_name 
-    (COUNT(?medal_type) AS ?total_medals)	
-    (SUM(IF(?medal_type = "gold", 1, 0)) AS ?nb_gold)
-    (SUM(IF(?medal_type = "silver", 1, 0)) AS ?nb_silver)
-    (SUM(IF(?medal_type = "bronze", 1, 0)) AS ?nb_bronze)
-  WHERE {
-    ?medalist foaf:name ?medalist_name ;
+SELECT ?country_name 
+	(STR(?total_medals) AS ?total_medal_str)  # Use STR() to hide the ^^<http://www.w3.org/2001/XMLSchema#integer>
+	(STR(?nb_gold) AS ?nb_gold_str)  
+	(STR(?nb_silver) AS ?nb_silver_str)
+	(STR(?nb_bronze) AS ?nb_bronze_str)
+WHERE {
+	SELECT ?country_name 
+    	(COUNT(?medal_type) AS ?total_medals)	
+    	(SUM(IF(?medal_type = "gold", 1, 0)) AS ?nb_gold)
+    	(SUM(IF(?medal_type = "silver", 1, 0)) AS ?nb_silver)
+    	(SUM(IF(?medal_type = "bronze", 1, 0)) AS ?nb_bronze)
+	WHERE {
+    	?medalist foaf:name ?medalist_name ;
               ex:won_medal ?medal ;
               dbo:country ?country .
-    ?country schema:name ?country_name .
-    ?medal ex:medal_type ?medal_type .
-  }
-  GROUP BY ?country_name
-  ORDER BY DESC(?total_medals) DESC(?nb_gold) DESC(?nb_silver) DESC(?nb_bronze)
-  LIMIT 10
+    	?country schema:name ?country_name .
+    	?medal ex:medal_type ?medal_type .
+  	}
+  	GROUP BY ?country_name
+  	ORDER BY DESC(?total_medals) DESC(?nb_gold) DESC(?nb_silver) DESC(?nb_bronze)
+  	LIMIT 10
 }
 
-# Number of medal per region
-SELECT ?nuts2_name (COUNT(?medal) AS ?nb_medal) WHERE {
-	?medal rdf:type ex:medal .
-    ?medalist ex:won_medal ?medal ;
-              dbo:birthPlace ?birth_place .
-  	?birth_place ex:nut2_name ?nuts2_name .
-  MINUS {?birth_place ex:nut2_name "NA"}
-} 
-GROUP BY ?nuts2_name
-ORDER BY DESC(?nb_medal)
-LIMIT 5
+# Number of medal per region, with details of the number of gold, silver and bronze medals
+SELECT ?nuts2_name
+	?country
+	(STR(?total_medals) AS ?total_medal_str)
+	(STR(?nb_gold) AS ?nb_gold_str)
+	(STR(?nb_silver) AS ?nb_silver_str)
+	(STR(?nb_bronze) AS ?nb_bronze_str)
+WHERE {
+	SELECT ?nuts2_name
+		?country
+        (COUNT(?medal_type) AS ?total_medals)	
+        (SUM(IF(?medal_type = "gold", 1, 0)) AS ?nb_gold)
+        (SUM(IF(?medal_type = "silver", 1, 0)) AS ?nb_silver)
+        (SUM(IF(?medal_type = "bronze", 1, 0)) AS ?nb_bronze)
+	WHERE {
+     	?medal rdf:type ex:medal ;
+      		ex:medal_type ?medal_type .
+      	?medalist ex:won_medal ?medal ;
+      		dbo:birthPlace ?birth_place .
+      	?birth_place ex:nut2_id ?nuts2_id ;
+      		ex:nut2_name ?nuts2_name ;
+          	ex:nut0_name ?country ;
+  	} 
+  	GROUP BY ?nuts2_id ?nuts2_name ?country ?nuts2_population ?nuts2_gdp
+  	ORDER BY DESC(?total_medals) DESC(?nb_gold) DESC(?nb_silver) DESC(?nb_bronze)
+	LIMIT 5
+}
+
+# Regions, ordered by medals per millions of residents
+SELECT ?nuts2_name
+	?country
+	(STR(?total_medals) AS ?total_medal_str)
+	(STR(?nuts2_population_in_million) AS ?nuts2_population_in_million_str)
+	(STR(?medals_per_million_residents) AS ?medals_per_million_residents_str)
+WHERE {
+	SELECT ?nuts2_name
+		?country
+		(COUNT(?medal) AS ?total_medals)	
+		(ROUND((?nuts2_population * 1000) / 1000000) / 1000 AS ?nuts2_population_in_million)
+  		(ROUND((?total_medals / ?nuts2_population) * 1000000 * 100) / 100 AS ?medals_per_million_residents)
+	WHERE {
+		?medal rdf:type ex:medal .
+		?medalist ex:won_medal ?medal ;
+      		dbo:birthPlace ?birth_place .
+      	?birth_place ex:nut2_id ?nuts2_id ;
+      		ex:nut2_name ?nuts2_name ;
+        	ex:nut2_population ?nuts2_population ;
+          	ex:nut0_name ?country ;
+  	} 
+  	GROUP BY ?nuts2_id ?nuts2_name ?country ?nuts2_population
+	ORDER BY DESC(?medals_per_million_residents)
+  	LIMIT 10
+}
+
+# Regions, ordered by medals per millions euros of GDP
+SELECT ?nuts2_name
+	?country
+	(STR(?total_medals) AS ?total_medal_str)
+	(STR(?nuts2_gdp_in_mio_euros) AS ?nuts2_gdp_in_mio_euros_str)
+	(STR(?medals_per_mio_euros_gdp) AS ?medals_per_mio_euros_gdp_str)
+WHERE {
+	SELECT ?nuts2_name
+		?country
+		(COUNT(?medal) AS ?total_medals)
+		(?nuts2_gdp AS ?nuts2_gdp_in_mio_euros)
+  		((?total_medals / ?nuts2_gdp_in_mio_euros) AS ?medals_per_mio_euros_gdp)
+	WHERE {
+		?medal rdf:type ex:medal .
+		?medalist ex:won_medal ?medal ;
+      		dbo:birthPlace ?birth_place .
+      	?birth_place ex:nut2_id ?nuts2_id ;
+      		ex:nut2_name ?nuts2_name ;
+        	ex:nut2_gdp ?nuts2_gdp ;
+          	ex:nut0_name ?country .
+  	} 
+  	GROUP BY ?nuts2_id ?nuts2_name ?country ?nuts2_gdp
+	ORDER BY DESC(?medals_per_mio_euros_gdp)
+  	LIMIT 10
+}
