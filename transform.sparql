@@ -45,18 +45,18 @@ CONSTRUCT {
         schema:name     ?place_of_birth;
         geo:lat         ?lat_typed;
         geo:long        ?lon_typed;
-        ex:nut0_id      ?nuts0_id_uri;
-        ex:nut0_name    ?nuts0_name_fixed;
-        ex:nut1_id      ?nuts1_id_uri;
-        ex:nut1_name    ?nuts1_name_fixed;
-        ex:nut2_id      ?nuts2_id_uri;
-        ex:nut2_name    ?nuts2_name_fixed;
-        ex:nut2_population  ?nuts2_population_typed;
-        ex:nut2_gdp     ?nuts2_gdp_typed; # Will be missing if NA
-        ex:nut3_id      ?nuts3_id_uri;
-        ex:nut3_name    ?nuts3_name_fixed;
-        ex:nut3_population  ?nuts3_population_typed;
-        ex:nut3_gdp     ?nuts3_gdp_typed. # Will be missing if NA
+        ex:nuts0_id      ?nuts0_id_uri;
+        ex:nuts0_name    ?nuts0_name_fixed;
+        ex:nuts1_id      ?nuts1_id_uri;
+        ex:nuts1_name    ?nuts1_name_fixed;
+        ex:nuts2_id      ?nuts2_id_uri;
+        ex:nuts2_name    ?nuts2_name_fixed;
+        ex:nuts2_population  ?nuts2_population_typed;
+        ex:nuts2_gdp     ?nuts2_gdp_typed; # Will be missing if NA
+        ex:nuts3_id      ?nuts3_id_uri;
+        ex:nuts3_name    ?nuts3_name_fixed;
+        ex:nuts3_population  ?nuts3_population_typed;
+        ex:nuts3_gdp     ?nuts3_gdp_typed. # Will be missing if NA
 
     # ?sport_id a dbo:Sport; # Remove and include directly into event ?
     #         schema:name       ?sport.

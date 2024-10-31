@@ -96,9 +96,9 @@ WHERE {
       		ex:medal_type ?medal_type .
       	?medalist ex:won_medal ?medal ;
       		dbo:birthPlace ?birth_place .
-      	?birth_place ex:nut2_id ?nuts2_id ;
-      		ex:nut2_name ?nuts2_name ;
-          	ex:nut0_name ?country ;
+      	?birth_place ex:nuts2_id ?nuts2_id ;
+      		ex:nuts2_name ?nuts2_name ;
+          	ex:nuts0_name ?country .
   	} 
   	GROUP BY ?nuts2_id ?nuts2_name ?country ?nuts2_population ?nuts2_gdp
   	ORDER BY DESC(?total_medals) DESC(?nb_gold) DESC(?nb_silver) DESC(?nb_bronze)
@@ -121,10 +121,10 @@ WHERE {
 		?medal rdf:type ex:medal .
 		?medalist ex:won_medal ?medal ;
       		dbo:birthPlace ?birth_place .
-      	?birth_place ex:nut2_id ?nuts2_id ;
-      		ex:nut2_name ?nuts2_name ;
-        	ex:nut2_population ?nuts2_population ;
-          	ex:nut0_name ?country ;
+      	?birth_place ex:nuts2_id ?nuts2_id ;
+      		ex:nuts2_name ?nuts2_name ;
+        	ex:nuts2_population ?nuts2_population ;
+          	ex:nuts0_name ?country .
   	} 
   	GROUP BY ?nuts2_id ?nuts2_name ?country ?nuts2_population
 	ORDER BY DESC(?medals_per_million_residents)
@@ -147,10 +147,10 @@ WHERE {
 		?medal rdf:type ex:medal .
 		?medalist ex:won_medal ?medal ;
       		dbo:birthPlace ?birth_place .
-      	?birth_place ex:nut2_id ?nuts2_id ;
-      		ex:nut2_name ?nuts2_name ;
-        	ex:nut2_gdp ?nuts2_gdp ;
-          	ex:nut0_name ?country .
+      	?birth_place ex:nuts2_id ?nuts2_id ;
+      		ex:nuts2_name ?nuts2_name ;
+        	ex:nuts2_gdp ?nuts2_gdp ;
+          	ex:nuts0_name ?country .
   	} 
   	GROUP BY ?nuts2_id ?nuts2_name ?country ?nuts2_gdp
 	ORDER BY DESC(?medals_per_mio_euros_gdp)
