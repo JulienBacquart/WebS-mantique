@@ -1,6 +1,8 @@
-PREFIX schema: <https://schema.org/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX ex: <http://example.org/>
+PREFIX schema: <http://schema.org/>
 PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX dbpage:  <https://dbpedia.org/page/>
+PREFIX dbpage:  <http://dbpedia.org/page/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -156,6 +158,12 @@ WHERE {
 	ORDER BY DESC(?medals_per_mio_euros_gdp)
   	LIMIT 10
 }
+
+PREFIX ns1: <http://www.powermap.org/ontology#>
+PREFIX ns2: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX ns3: <http://schema.org/>
+PREFIX ns4: <http://www.dbpedia.org/ontology/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 # Number of medals and nuclear powerplant per country
 SELECT ?country_name 
