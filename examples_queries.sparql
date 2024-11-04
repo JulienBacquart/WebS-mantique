@@ -156,3 +156,36 @@ WHERE {
 	ORDER BY DESC(?medals_per_mio_euros_gdp)
   	LIMIT 10
 }
+
+# Number of medals and nuclear powerplant per country
+SELECT ?country_name 
+	(STR(?nb_medal) AS ?nb_medal_)  # Use STR() to hide the ^^<http://www.w3.org/2001/XMLSchema#integer>
+	(STR(?nb_powerplants) AS ?nb_nuclear_powerplants_)
+#SELECT  ?country_name ?nb_medal ?nb_powerplants
+WHERE {
+      SERVICE <http://localhost:3030/powerplants/query> {
+          	SELECT DISTINCT ?country_powerplant (COUNT(?powerplant) AS ?nb_powerplants) 
+    		WHERE {
+              ?powerplant ns4:country ?country_powerplant ;
+                          <https://fuseki.nishyda.tech/ontology#energySource> "Nuclear" .
+          	} GROUP BY ?country_powerplant
+    		ORDER BY DESC(?nb_powerplants)
+    		LIMIT 6
+      }
+      SERVICE <https://dbpedia.org/sparql> {
+            SELECT ?country_powerplant ?wikidata_entity WHERE {
+      			# /!\ United_States != United_States_of_America, we need to follow the page redirect if it exists
+                ?country_powerplant <http://dbpedia.org/ontology/wikiPageRedirects>?/owl:sameAs ?wikidata_entity .
+                FILTER (strstarts(str(?wikidata_entity), 'http://www.wikidata.org/entity/'))
+            }
+      }
+		SERVICE <http://localhost:3030/2024_medalists_all/query> {
+            SELECT ?wikidata_entity ?country_name (COUNT(?medal) AS ?nb_medal) WHERE {
+                ?medal rdf:type ex:medal .
+                ?medalist ex:won_medal ?medal ;
+                          dbo:country ?wikidata_entity .
+                ?wikidata_entity schema:name ?country_name .
+      		} GROUP BY ?wikidata_entity ?country_name
+    		ORDER BY DESC(?nb_medal)
+      }
+}
