@@ -298,3 +298,46 @@ WHERE {
      	}
   	}
 }
+
+# nom des athlètes des Pays de la Loire avec leur sport 
+SELECT ?name ?medal ?sport WHERE {
+	?bp ex:nuts1_name "Pays de la Loire".
+	?m ex:medal_type ?medal.
+	?p dbo:birthPlace ?bp;
+		ex:won_medal ?m:
+		dbo:sport ?sport;
+		foaf:name ?name.
+}
+
+# top 5 des pays avec le nb de milliardaires, 
+SELECT ?pays ?medailles ?sante ?education ?economie ?milliardaires 
+WHERE {
+ 	{
+	SERVICE <http://localhost:3030/jo2024/query>{
+			SELECT ?pays (COUNT(?medal) AS ?medailles) WHERE {
+				?medal rdf:type ex:medal.
+				?medalist ex:won_medal ?medal;
+						dbo:country ?p.
+				?p schema:name ?pays.
+			} GROUP BY ?pays
+		} ORDER BY DESC(?medailles)
+	}
+	OPTIONAL 
+	{
+		SERVICE <http://localhost:3030/prosperity/query>{
+			SELECT ?pays ?sante ?education ?economie WHERE {
+				?x owl1:name ?pays;
+					score:health ?sante;
+					score:education ?education;
+					score:economic_quality ?economie.
+			}
+		}
+		SERVICE <http://localhost:3030/billionaires/query>{
+ 			SELECT ?pays (COUNT(?x) AS ?milliardaires) WHERE {
+				BIND(IRI(CONCAT("http://dbpedia.org/resource/" , STR(?pays))) AS ?uriPays).
+				?x dbo:location ?uriPays.
+			} GROUP BY ?pays
+		}	
+	}
+} ORDER BY DESC(?medailles)
+LIMIT 5
